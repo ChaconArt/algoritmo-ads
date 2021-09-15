@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6E</title>
+</head>
+<body>
+    <center>
+        <h1>Termômetro ONLINE</h1>
+            <input id="temp" placeholder="Insira a temperatura do ambiente">
+                <button onclick="analisar()">Verificar clima</button>
+                    <div id="resultado"></div>
+    </center>
+</body>
+</html>
+<script>
+    function analisar() {
+        var temperatura = Number(temp.value);
+            if (temperatura <10)
+            resultado.innerHTML = `<br> Apropriada para conservar alimento <br> <img src="https://alimentacaoemfoco.org.br/wp-content/uploads/2018/02/sobras-alimentos-conservados.jpg" style="width: 300px;">`;
+            else 
+            resultado.innerHTML = `<br> Inapropriada para conservar alimento <br> <img src="https://www.clickgratis.com.br/blog-clickgratis/wp-content/uploads/2016/03/allimentos-estragados.jpg" style="width: 300px;">`;
+    }
+</script>
