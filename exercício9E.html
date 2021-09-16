@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9E</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+
+    <center>
+
+        <select style="display: block;" id="tab1" onchange="mostrarespecies()">
+            <option value="especies">Escolha uma espécie</option>
+            <option value="oviparos">Ovíparos</option>
+            <option value="mamiferos">Mamiferos</option>
+        </select>
+
+       <select style="display: none;" id="tab2" onchange="mostraroviaros()">
+            <option value="galinha">Galinha</option>
+            <option value="tartaruga">Tartaruga</option>
+            <option value="peixe">Peixe</option>
+        </select> 
+
+        <select style="display: none;" id="tab3" onchange="mostrarmamiferos()">
+            <option value="elefante">Elefante</option>
+            <option value="porco">Porco</option>
+            <option value="coelho">Coelho</option>
+        </select>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+function mostrarespecies() {
+        if (tab.value == 'oviparos') {
+    tab2.style.display = 'block';} 
+}
+
+
+</script>
