@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11E IF simples</title>
+</head>
+<body>
+    <center>
+        Quantos filhos você tem? <input id="qtddfilhos"> <br> <br>
+        <button onclick="analisar()">Analisar familia</button>
+        <div id="resultado"></div>
+    </center>
+</body>
+</html>
+<script>
+
+function analisar() {
+
+    var filhos = qtddfilhos.value;
+
+    if (filhos >= 1)
+    {resultado.innerHTML += `<br> Não tem TV`;}
+
+    if (filhos >=2)
+    {resultado.innerHTML += `<br> Não tem internet`;}
+
+    if (filhos >=3)
+    {resultado.innerHTML += `<br> Não tem video game`;}
+
+    if (filhos >=4)
+    {resultado.innerHTML += `<br> Não tem Netflix`;}
+
+
+
+}
+
+</script>
