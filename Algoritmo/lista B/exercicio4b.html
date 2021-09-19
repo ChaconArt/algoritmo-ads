@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h2>
+Nota 1:<input id="ipt_n1" type="text" placeholder="digite aqui a nota"> <br>
+Nota 2:<input id="ipt_n2" type="text" placeholder="digite aqui a nota"> <br>
+
+<button onclick="but1()">Calcular média</button>
+<div id="msg1"></div>
+    </h2>
+</body>
+</html>
+<script>
+function but1()
+{
+msg1.innerHTML = `Sua média foi de ${(Number(ipt_n1.value) + Number(ipt_n2.value)) / 2}`
+}
+
+</script>

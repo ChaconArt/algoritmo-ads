@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5B</title>
+</head>
+<body style="text-align: left;">
+    
+Valor da passagem: <input id="ipt_1" type="number" placeholder=""> <br>
+Quantidade de passagem: <input id="ipt_2" type="number" placeholder=""> <br>
+<button onclick="but1()">Calcular VT</button>
+
+<div id="msg1"></div>
+
+</body>
+</html>
+<script>
+
+function but1() {
+    msg1.innerHTML = `Você vai gastar <u>R$ ${(ipt_1.value) * (ipt_2.value)}</u> por mês com ônibus`
+}
+
+</script>

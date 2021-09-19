@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7b</title>
+</head>
+<body>
+    Nome do aluno: 
+<input id="ipt_nome" type="text" placeholder=""> <br>
+    Aulas totais do curso:
+<input id="ipt_totais" type="text" placeholder=""> <br>
+    Faltas:
+<input id="ipt_aulas" type="text" placeholder=""> <br>
+
+<br><button onclick="calc()">Calcular frequência</button>
+
+<div id="msg"></div>
+
+</body>
+</html>
+<script>
+
+function calc() {
+msg.innerHTML=`<span style=color:blue;>Olá, ${ipt_nome.value} ` + `sua frequência foi </span>` + `<b style=color:green;>` + (1- Number(ipt_aulas.value) / Number(ipt_totais.value))*100 + `% </b>`;   
+}
+
+</script>

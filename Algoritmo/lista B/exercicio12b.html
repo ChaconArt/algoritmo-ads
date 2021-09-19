@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h1 style="text-align: center;">  O poder de guerreiros Sayajins <br>
+    <input id="ipt_base" type="text" placeholder="ki base"> <br>
+    <h2 style="text-align: center;">Transformar em...</h2>
+    </h1>
+
+    <h1 style="text-align: center;">
+    <button onclick="ssj()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    </h1>
+
+    <div id="msg"></div>
+
+</body>
+</html>
+
+<script>
+
+function ssj()  {
+    var ax_1 = ipt_base.value
+    msg.innerHTML= `<h1 style="text-align:center;">${ax_1 = ipt_base.value * 50} de ki <br> <img src=ssj.jpg> <br> Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${ax_1}</h1>`
+}
+
+function ssj2() {
+    var ax_2 = ipt_base.value
+    msg.innerHTML= `<h1 style="text-align:center;">${ax_2 = ipt_base.value * 100} de ki <br> <img src=ssj2.jpg> <br> Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ax_2}</h1>`
+}
+
+function ssj3() {
+    var ax_3 = ipt_base.value
+    msg.innerHTML= `<h1 style="text-align:center;">${ax_3 = ipt_base.value * 200} de ki <br> <img src=ssj3.png> <br> Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ax_3}</h1>`
+}
+</script>

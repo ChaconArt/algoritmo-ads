@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5D</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<h2>Tabuada</h2>
+    <select id="tabuada" onchange="resultado()">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+<br>
+<div id="div_tabu"></div>
+
+<script>
+
+function resultado(){
+
+    var numero_tab = tabuada.value
+
+    div_tabu.innerHTML = `
+     ${numero_tab} x 1 = ${numero_tab * 1} <br> 
+     ${numero_tab} x 2 = ${numero_tab * 2} <br>
+     ${numero_tab} x 3 = ${numero_tab * 3} <br>
+     ${numero_tab} x 4 = ${numero_tab * 4} <br>
+     ${numero_tab} x 5 = ${numero_tab * 5} <br>
+     ${numero_tab} x 6 = ${numero_tab * 6} <br>
+     ${numero_tab} x 7 = ${numero_tab * 7} <br>
+     ${numero_tab} x 8 = ${numero_tab * 8} <br>
+     ${numero_tab} x 9 = ${numero_tab * 9} <br>
+     ${numero_tab} x 10 = ${numero_tab * 10} <br>
+    `
+
+}                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

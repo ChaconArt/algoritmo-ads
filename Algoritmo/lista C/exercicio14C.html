@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="imgplay" style="display: block;">
+
+    <center>
+    
+        <img style="margin-top: 280px; height: 100px;" onclick="play()" src="https://img2.gratispng.com/20180826/jfx/kisspng-portable-network-graphics-push-button-pixel-art-start-buttongold2-pixel-art-maker-5b82f07621a345.9031883315353078941378.jpg" >
+
+    </center>    
+
+</div>
+
+    <div id="luta" style="display: none;">
+
+        <img onclick="scorpion()" style="height: 250px; float: left;" src="https://i.pinimg.com/564x/e5/8e/f6/e58ef61479a32d42527b9cea59c1f71e.jpg">
+        <img onclick="subzero()" style="height: 250px; float: right;" src="https://image.api.playstation.com/cdn/UP1018/CUSA00967_00/yIWlLKcaukwLA8UcPPEkeI8eDhkbUEPc.png">
+
+    </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="barra_sub" style="background-color: blue; height: 50px; width: 0%; display: none; color: white;">Sub Zero</div>
+    <div id="barra_scorpion" style="background-color: yellow; height: 50px; width: 0%; display: none; color: black;">Scorpion</div> <br>
+
+    <span id="golpes" style="display: none;">
+        Golpes sofridos pelo lutador 1: <b id="golpe1">0</b> <br>
+        Golpes sofridos pelo lutador 2: <b id="golpe2">0</b> <br>
+    </span>
+
+</body>
+</html>
+<script>
+
+    var vida_sub = 100;
+    barra_sub.style.width = `${vida_sub}%`;
+
+    var vida_sco = 100;
+    barra_scorpion.style.width = `${vida_sco}%`;
+
+    var golpel1 = 0;
+    var golpel2 = 0;
+
+function play() {
+
+imgplay.style.display = 'none';
+luta.style.display = 'block';
+barra_sub.style.display = 'block';
+barra_scorpion.style.display = 'block';
+golpes.style.display = 'block';
+
+}
+
+function scorpion() {
+
+golpel1++;
+golpe1.innerHTML = golpel1;
+
+vida_sub -= 5;
+barra_sub.style.width = `${vida_sub}%`
+
+}
+
+function subzero() {
+
+golpel2 ++;
+golpe2.innerHTML = golpel2;
+
+vida_sco -= 5;
+barra_scorpion.style.width = `${vida_sco}%`;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

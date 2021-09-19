@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8B</title>
+</head>
+<body>
+    
+<h2> Insira seu salário:<input id="ipt_sal" type="text" placeholder=""> <br>
+<button onclick="but1()">Calcular descontos</button>
+</h2>
+
+<div id="msg1"></div>
+
+</body>
+</html>
+<script>
+
+function but1() {
+    var ax_num1 = ipt_sal.value
+    var ax_num2 = ipt_sal.value
+    msg1.innerHTML=`Seus descontos serão de: <br>` + `<b>IN</b>SS: <b>R$${ipt_sal.value * 0,10}</b><br>` +
+`<b>IR: R$${ipt_sal.value * 0,20}</b><br>` + `<b>T</b>otal de descontos: <b>R$${ax_num1 = (ipt_sal.value * 0,10) + (ipt_sal.value * 0,20)}</b><br>` + ` Seu salário, após os descontos será de: <b><u>R$${ax_num2 = (ipt_sal.value - ax_num1)}</u></b>`
+}
+
+</script>

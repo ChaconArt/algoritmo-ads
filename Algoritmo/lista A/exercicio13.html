@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil e Alemanha</title>
+</head>
+<body>
+    
+</html>
+<h1 style="text-align: center;">Brasil x Alemanha</h1>
+<h2 style="text-align: center;">
+    <button onclick="golb()">Gol do Brasil</button>
+    <button onclick="gola()">Gol da Alemanha</button></h2>
+<br>
+<h2 style="text-align: center;"><button onclick="ref()">Recomeçar partida</button></h2>
+
+<h2 style="text-align: center;"><b>Tempo real do jogo:</b></h2>
+
+<div id="msg1"></div>
+
+<script>
+
+function golb() {
+    msg1.innerHTML+="<span style='color: green;'>É goooolll do Brasil!!!<br>"
+} 
+
+function gola() {
+    msg1.innerHTML+="<span style='background-color: red;'> <span style='color: yellow;'> É goooolll da Alemanha!!!<br>"
+}
+
+function ref() {
+    msg1.innerHTML=""
+}
+
+</script>
+</body>

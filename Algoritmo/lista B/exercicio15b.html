@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Eleições</h1>
+
+   <h3 style="text-align: center;">
+    Zé Buduia <input id="ipt_zb" type="text" placeholder="quantidade de votos"> <br>
+    Maria Bigodenha <input id="ipt_mb" type="text" placeholder="quantidade de votos"> <br>
+    Brancos <input id="ipt_br" type="text" placeholder="quantidade de votos"> <br>
+    Nulos <input id="ipt_nu" type="text" placeholder="quantidade de votos">
+    </h3>
+    
+    <h3 style="text-align: center;">
+    <button onclick="but()">Resultados da eleição</button>        
+    </h3>
+
+    <div id="msg"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+function but() {
+
+    var ax_1 = Number(ipt_zb.value) + Number(ipt_mb.value) + Number(ipt_br.value) + Number(ipt_nu.value)
+    var ax_2 = (ipt_zb.value / ax_1)* 100
+    var ax_3 = (ipt_mb.value / ax_1) * 100
+    var ax_4 = ((Number(ipt_br.value)+Number(ipt_nu.value))/ ax_1) * 100
+
+    msg.innerHTML=
+`<b> Total de votos: <u>${Number(ipt_zb.value) + Number(ipt_mb.value) + Number(ipt_br.value) + Number(ipt_nu.value)}</u></b><br> 
+
+<b> Zé Buduia:</b> ${(ipt_zb.value / ax_1)*100}% (${ipt_zb.value} votos)<br> <div style="background-color: blue; height: 30px; width: ${ax_2}%;"></div> <br> 
+
+<b> Maria Bigodenha: </b> ${(ipt_mb.value / ax_1) * 100}% (${ipt_mb.value} votos)<br> <div style="background-color: pink; height: 30px; width: ${ax_3}%;"></div> <br>
+
+<b> Inválidos:</b> ${((Number(ipt_br.value)+Number(ipt_nu.value))/ ax_1) * 100}% (${Number(ipt_br.value) + Number(ipt_nu.value)} votos) <br> <div style="background-color: yellow; height: 30px; width: ${ax_4}%;"></div> <br>`
+}   
+
+</script>

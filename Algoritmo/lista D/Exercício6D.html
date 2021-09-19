@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6D</title>
+</head>
+<body>
+    
+<h2>Estações do ano</h2>
+
+<select id="estacoes" onchange="exibir()">   
+        <option value="https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2021/03/20/1575972527-outono.jpg">Outono</option>
+        <option value="https://www.bigblueviagens.com.br/wp-content/uploads/2018/05/inverno-2.png">Inverno</option>
+        <option value="https://hmjardins.com.br/tok/wp-content/uploads/2017/08/capa.jpg">Primavera</option>
+        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8SYLaLIA4t5Dc7hEa0r94txL1N5u_D4rjg_EHMHVNJ3V-tjBzIRPyHO7iqfM_K9T__s&usqp=CAU">Verão</option>
+</select>
+
+<div><img src="" id="imagem" style="width: 200px;"></div>
+
+</body>
+</html>
+
+<script>
+
+function exibir() {
+
+        imagem.src =`${estacoes.value}`
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

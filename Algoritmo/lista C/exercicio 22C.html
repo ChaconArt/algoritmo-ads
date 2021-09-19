@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Agenda de entregas</h2>
+ 
+<div id="começo" style="display: block;">
+    <h3>Entregas para ZS</h3>
+    <input type="text id" id="zs">
+    <h3>Entregas para ZN</h3>
+    <input type="text id" id="zn">
+
+    <h3>Entregas para ZL</h3>
+    <input type="text id" id="zl">
+
+    <h3>Entregas para ZO</h3>
+    <input type="text id" id="zo"> <br><br>
+    <button onclick="carregar()" >Carregar agenda</button>
+</div>
+<div id="entregar" style="display: none;">
+    Entregas ZL: <b><span id="entregas_zl" >0</span></b> <br>
+    Entregas ZS: <b><span id="entregas_zs" >0</span></b> <br>
+    Entregas ZN: <b><span id="entregas_zn" >0</span></b> <br>
+    Entregas ZO: <b><span id="entregas_zo" >0</span></b> <br>
+    Entregas restantes: <b><span id="entregas_rest" >0</span></b> <br>
+</div> <br>
+<div id="botoes" style="display: none;" >
+    <button onclick="but1()" >ENTREGAR ZL</button> <br>
+    <button onclick="but2()" >ENTREGAR ZS</button><br>
+    <button onclick="but3()" >ENTREGAR ZN</button><br>
+    <button onclick="but4()" >ENTREGAR ZO</button>
+</div>
+
+
+</body>
+</html>
+<script>
+
+    var zl_feita = 0;
+    var zs_feita = 0;
+    var zn_feita = 0;
+    var zo_feita = 0;
+    
+    function carregar(){
+        começo.style.display = "none"
+        entregar.style.display = "block"
+        botoes.style.display = "block"
+        
+        var restante = Number(zs.value) + Number(zl.value) + Number(zn.value) + Number(zo.value)
+        entregas_zs.innerHTML = `${zs.value}`
+        entregas_zl.innerHTML = `${zl.value}`
+        entregas_zn.innerHTML = `${zn.value}`
+        entregas_zo.innerHTML = `${zo.value}`
+        entregas_rest.innerHTML = `${restante}`
+    }
+    function but1(){
+        zl_feita--;
+        entregas_zl.innerHTML =`${Number(zl.value) + Number(zl_feita)}` 
+        entregas_rest.innerHTML =`${Number(zs.value) + Number(zl.value) + Number(zn.value) + Number(zo.value) + Number(zl_feita)+ Number(zs_feita)+ Number(zn_feita)+ Number(zo_feita)}`  
+    }
+    function but2(){
+        zs_feita--;
+        entregas_zs.innerHTML =`${Number(zs.value) + Number(zs_feita)}` 
+        entregas_rest.innerHTML =`${Number(zs.value) + Number(zl.value) + Number(zn.value) + Number(zo.value) + Number(zs_feita)+ Number(zl_feita)+ Number(zn_feita)+ Number(zo_feita)}`
+    }
+    function but3(){
+        zn_feita--;
+        entregas_zn.innerHTML =`${Number(zn.value) + Number(zn_feita)}` 
+        entregas_rest.innerHTML =`${Number(zs.value) + Number(zl.value) + Number(zn.value) + Number(zo.value) + Number(zn_feita)+ Number(zl_feita)+ Number(zs_feita)+ Number(zo_feita)}`
+    }
+    function but4(){
+        zo_feita--;
+        entregas_zo.innerHTML =`${Number(zo.value) + Number(zo_feita)}` 
+        entregas_rest.innerHTML =`${Number(zs.value) + Number(zl.value) + Number(zn.value) + Number(zo.value) + Number(zo_feita)+ Number(zl_feita)+ Number(zs_feita)+ Number(zn_feita)}`
+    }
+
+</script>

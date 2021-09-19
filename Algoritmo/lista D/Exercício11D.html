@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11D</title>
+</head>
+<body>
+  <center>  
+<h1>Cofre $</h1>
+    <select id="cofre">
+        <option value="0.05">0,05</option>
+        <option value="0.10">0,10</option>
+        <option value="0.25">0,25</option>
+        <option value="0.50">0,50</option>
+        <option value="1.00">1,00</option>
+    </select> <br><br>
+
+    O saldo do cofrinho é de: R$ <b id="saldo">99,99</b> <br>
+    A quantidade de operações foi: <b id="qtd">99</b> <br>
+    Média dos depósitos: R$ <b id="media">99,99</b> <br> <br>
+
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="gastar()">Gastar a grana</button>
+
+</center>
+</body>
+</html>
+
+<script>
+
+var saldovar = 99.99;
+var qtdvar = 99;
+var mediavar = 99.99;
+
+function depositar() {
+    
+qtdvar++;    
+
+saldovar = Number(saldovar) + Number(cofre.value);
+saldo.innerHTML = `${saldovar.toFixed(2)}`;
+
+qtd.innerHTML = `${qtdvar}`
+
+media.innerHTML = `${(saldovar / qtdvar).toFixed(2)}`; 
+
+}
+
+function gastar() {
+
+saldovar = 0;
+qtdvar = 0;
+mediavar = 0;
+
+saldo.innerHTML = `0,00`;
+qtd.innerHTML = `0`;
+media.innerHTML = `0,00`;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
