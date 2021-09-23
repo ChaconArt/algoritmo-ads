@@ -1,0 +1,25 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+}
+
+.primeiro {
+    height: 30vh;
+    width: 30vw;
+    background-color: red;
+    margin: 10px 0;
+}
+
+.segundo {
+    height: 30vh;
+    width: 30vw;
+    background-color: blue;
+    padding: 100px 100px;
+}
+
+.texto {
+    color: #fff;
+    background-color: chartreuse;
+}
