@@ -29,13 +29,50 @@ insert into cliente (nomecliente, telefonefixocliente, telefonecelularcliente, e
 ('christian ronaldo', '27277979', '47477575', 'carrefour');
 
 insert into pet (tipopet, nomepet, racapet, datanascimentopet, fk_cliente) values 
-('jacare', 'lacoste', 'reptil', 17/05/2021, '1'), 
-('gato', 'garfield', 'felino', 22/09/2021, '2'), 
-('cachorro', 'scooby', 'vira-lata', 17/08/2020, '2'), 
-('ave', 'tony', 'calopsita', 12/12/2018, '3'), 
-('cachorro', 'toto', 'labrador', 11/04/2007, '4'), 
-('gato', 'julio', 'felino', 13/06/2015, '5'), 
-('ave', 'benta', 'galinha', 09/09/2014, '6');
+('jacare', 'lacoste', 'reptil', 20210517, '1'), 
+('gato', 'garfield', 'felino', 20200905, '2'), 
+('cachorro', 'scooby', 'vira-lata', 20170503, '2'), 
+('ave', 'tony', 'calopsita', 20180914, '3'), 
+('cachorro', 'toto', 'labrador', 20150304, '4'), 
+('gato', 'julio', 'felino', 20200102, '5'), 
+('ave', 'benta', 'galinha', 20191123, '6');
 
 select * from pet; 
+
+select * from cliente;
+
+alter table cliente modify column nomecliente varchar(30);
+
+select * from pet where tipopet = 'cachorro';
+
+select nomepet, datanascimentopet from pet;
+
+select * from pet order by nomepet;
+
+select * from cliente order by enderecocliente desc;
+
+select * from pet where nomepet like 't%';
+
+select * from cliente where nomecliente like '%chacon';
+
+update cliente set telefonefixocliente = '40028922' where idcliente = 1;
+
+select * from cliente where idcliente = 1;
+
+select * from pet
+join cliente on pet.fk_cliente = cliente.idcliente;
+
+select * from cliente 
+join pet on pet.fk_cliente = cliente.idcliente where idcliente = 2;
+
+delete from pet where idpets = 101; 
+
+select * from pet;
+
+delete from pet;
+
+
+
+
+
 
