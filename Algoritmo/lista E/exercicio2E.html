@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercíco 2E</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Renda familiar: <input id="renda" type="number"> <br>
+            <button onclick="analisar()">Analisar</button> <br>
+            <div id="resultado"></div>
+        </h1>
+    </center>
+</body>
+</html>
+<script>
+
+function analisar() {
+
+    var valorrenda = renda.value;
+
+    if (valorrenda <=250) {
+        resultado.innerHTML = `Classe E`;
+    }
+
+    else if (valorrenda <=900) {
+        resultado.innerHTML = `Classe D`;
+    }
+
+    else if (valorrenda <=2500) {
+        resultado.innerHTML = `Classe C`;
+    }
+
+    else if (valorrenda <=9500) {
+        resultado.innerHTML = `Classe B`;
+    }
+
+    else {
+        resultado.innerHTML =`Classe A`;
+    }
+
+}
+
+</script>

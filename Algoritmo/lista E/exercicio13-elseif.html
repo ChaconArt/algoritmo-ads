@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    button {
+
+        display: inline-block
+        border: 1px solid black;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 6px 10px;
+        background-color: seagreen;
+        color: white;
+
+    }
+
+</style>
+<body>
+
+    <center>
+
+        <h1>Meu cofrinho!</h1>  
+
+            Valor guardado: R$<b id="cofre">0.00</b> <br><br>
+
+                <button onclick="guarda5()">Guardar R$5,00</button>
+                <button onclick="gasta10()">Gastar R$10,00</button>
+
+                    <div id="msg"></div>
+                    <div id="msg2"></div>
+                    
+
+    </center>
+
+</body>
+</html>
+<script>
+
+    var nocofre = 0.00;
+
+    function guarda5() {
+
+        nocofre = Number(nocofre) + Number(5);
+        cofre.innerHTML = nocofre;
+
+        if (nocofre>-20) {
+            msg2.innerHTML = ``
+        }
+
+        if (nocofre>=0){
+            msg.innerHTML = `<br> <span style="color: blue;"> Finanças OK! </span>`;
+        }
+
+        if (nocofre>100){
+            msg2.innerHTML = `<br> #ostentação`;
+        }
+    }
+
+    function gasta10() {
+
+        nocofre = nocofre - 10;
+        cofre.innerHTML = nocofre;
+
+        if (nocofre<100) {
+            msg2.innerHTML = ``
+        }
+
+        if (nocofre<0) {
+            msg.innerHTML = `<br> <span style="color: red;">Finanças em perigo!</span>`
+        }
+
+        if (nocofre<-20) {
+            msg2.innerHTML = `<br> Quase um Corinthians!`
+        }
+
+    }
+
+
+
+</script>

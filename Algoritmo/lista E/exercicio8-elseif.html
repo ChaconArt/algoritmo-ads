@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    h1 {
+
+        width: 40%;
+        background-color: red;
+        margin: 0%;
+
+    }
+
+    div {
+
+        width: 40%;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+    }
+
+</style>
+<body>
+    <center>
+
+        <h1>Calculadora da Nutri</h1>
+            <div>
+                Quantos pães franceses você come por dia?    <br><input id="pao"> <br>
+                Quantos pacotes de bolacha recheada você come por dia?    <br><input id="bolacha"> <br>
+                Quantos copos de achocolatado você toma por dia?    <br><input id="toddy"> <br><br>
+                <button onclick="calc()">Verificar calorias</button>
+            </div> 
+        <div id="msg"></div>
+    </center>
+</body>
+</html>
+<script>
+    function calc () {
+
+    var caloriaspao = pao.value * 50;
+    var caloriasbolacha = bolacha.value * 80;
+    var caloriasachocolatado = toddy.value * 70;
+    var tudo = Number(caloriasachocolatado) + Number(caloriasbolacha) + Number (caloriaspao);
+
+    if (tudo<200)           {
+        msg.innerHTML = `<br> Parabéns, vai sair em forma da quarentena!`
+    }
+    else if (tudo=>200)     {
+        msg.innerHTML = `<br> Cuidado, vai ficar mais "fofinho(a)" após quarentena!`
+    }
+    if (tudo>400)           {
+        msg.innerHTML = `<br> Bom, acho que muitos não vão te reconhecer após a quarentena`
+    }   
+    }
+</script>
