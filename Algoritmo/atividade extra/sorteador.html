@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    
+        <h1>Sorteador dos maiores times de SP</h1> <br>
+        <button onclick="sortear()">Sortear</button>
+        
+        <img id="sp" src="https://a.espncdn.com/i/teamlogos/soccer/500/2026.png" style="display: none;">
+        <img id="quinze" src="https://a-static.mlcdn.com.br/224x224/painel-de-festa-futebol-xv-de-piracicaba-10-colormyhome/colormyhome/995/1934bde5e9ae951323f5bd9bdb56f9e0.jpg" style="display: none;">
+        <img id="ponte" src="https://pbs.twimg.com/profile_images/1324032350406193152/J0P6Yuip.jpg" style="display: none;">
+        <img id="guarani" src="https://cdn.freebiesupply.com/logos/thumbs/2x/guarani-futebol-clube-de-campinas-sp-logo.png" style="display: none;">
+        
+    </center>
+</body>
+</html>
+<script>
+
+    var sorteio
+
+    function sortear() {
+
+    var sorteio = Math.randon();
+
+    if (sorteio*3 ) {
+        sp.style.display = 'block'
+    }
+
+    if (sorteio*3 ==1) {
+        quinze.style.display = 'block'
+    } 
+
+    if (sorteio*3 ==2) {
+        ponte.style.display = 'block'
+    }
+
+    if (sorteio*3 ==3) {
+        guarani.style.display = 'block'
+    }
+
+    }
+
+</script>
