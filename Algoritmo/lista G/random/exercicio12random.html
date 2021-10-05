@@ -14,15 +14,21 @@
     <button onclick="avaliar()">Avaliar</button> <br><br>
     <div id="nota"></div> <br><br>
 
-    <img id="muitotriste" src="https://pbs.twimg.com/media/BsDdpVhCEAAN105.jpg" style="display: none; width: 300px;">
 
-    <img id="meiotriste" src="https://sportbuzz.uol.com.br/media/_versions/design_sem_nome_3_Jcb4nfg_widelg.png" style="display: none; width: 300px;">
 
-    <img id="neutro" src="https://lh3.googleusercontent.com/proxy/Ktk-UvlUqtNuYbroE8QJHHMpjXbDpYjgP86RAFQX1YySxNADBezwwbF6lAoamzKjruPYO-gWA0bBaxnLRkFhUnJs9sqio-hRjJQY" style="display: none; width: 300px;">
+    <img id="muitotriste" src="https://pbs.twimg.com/media/BsDdpVhCEAAN105.jpg" style="display: none; width: 200px;">
 
-    <img id="feliz" src="https://i0.wp.com/saopaulo.blog/wp-content/uploads/2019/04/reinaldo.jpg?fit=1024%2C682&ssl=1" style="display: none; width: 300px;">
+    <img id="meiotriste" src="https://sportbuzz.uol.com.br/media/_versions/design_sem_nome_3_Jcb4nfg_widelg.png" style="display: none; width: 200px;">
+
+    <img id="neutro" src="https://lh3.googleusercontent.com/proxy/Ktk-UvlUqtNuYbroE8QJHHMpjXbDpYjgP86RAFQX1YySxNADBezwwbF6lAoamzKjruPYO-gWA0bBaxnLRkFhUnJs9sqio-hRjJQY" style="display: none; width: 200px;">
+
+    <img id="feliz" src="https://i0.wp.com/saopaulo.blog/wp-content/uploads/2019/04/reinaldo.jpg?fit=1024%2C682&ssl=1" style="display: none; width: 200px;">
     
-    <img id="muitofeliz" src="https://i.ytimg.com/vi/wMxogM3njrU/hqdefault.jpg" style="display: none; width: 300px;">
+    <img id="muitofeliz" src="https://i.ytimg.com/vi/wMxogM3njrU/hqdefault.jpg" style="display: none; width: 200px;"> <br><br>
+
+    <button onclick="calcularmedia()">Equipe</button> <br><br>
+    <div id="equipemedia"></div> <br><br>
+    <div id="imgmedia"></div>
 
 </center>
 
@@ -36,6 +42,7 @@
 
     function avaliar() {
 
+        ckqtdd ++; 
         num = (Math.random()*5).toFixed(1)
 
         if (num < 0.6) {
@@ -99,6 +106,32 @@
             }
 
         
-    } 
+    }
+
+    function calcularmedia() {
+
+        media = 0;
+        media = (media + num) / ckqtdd;
+
+        equipemedia.innerHTML = `A média geral é: ${media.toFixed(1)} <br>`
+
+        if (media < 0.6 ) {
+            imgmedia.innerHTML = `<img src="https://pbs.twimg.com/media/BsDdpVhCEAAN105.jpg" style="width: 200px;">`
+        }
+        if (media > 0.5 && num < 1.6) {
+            imgmedia.innerHTML = `<img src="https://sportbuzz.uol.com.br/media/_versions/design_sem_nome_3_Jcb4nfg_widelg.png" style="width: 200px;">`
+        }
+        if (media > 1.5 && num < 3.5) {
+            imgmedia.innerHTML = `<img src="https://lh3.googleusercontent.com/proxy/Ktk-UvlUqtNuYbroE8QJHHMpjXbDpYjgP86RAFQX1YySxNADBezwwbF6lAoamzKjruPYO-gWA0bBaxnLRkFhUnJs9sqio-hRjJQY" style="width: 200px;">`
+        }
+        if (media > 3.5 && num < 4.5) {
+            imgmedia.innerHTML = `<img src="https://i0.wp.com/saopaulo.blog/wp-content/uploads/2019/04/reinaldo.jpg?fit=1024%2C682&ssl=1" style="width: 200px;">`
+        }
+        if (media > 4.5) {
+            imgmedia.innerHTML = `<img src="https://i.ytimg.com/vi/wMxogM3njrU/hqdefault.jpg" style="width: 200px;">`
+        }
+
+
+    }
 
 </script>
