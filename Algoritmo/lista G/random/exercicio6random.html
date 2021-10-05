@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+* {
+    margin-top: 100px;
+}
+
+button {
+    height: 20%;
+    width: 15%;
+    background-color: blueviolet;
+    border-bottom: black;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+</style>
+<body>
+    
+    <center>
+
+        <button onclick="sortear()">Sortear momento do dia</button> <br><br>
+        <div id="msg"></div>
+
+    </center>
+
+</body>
+</html>
+<script>
+
+    var sorteio
+
+    function sortear() {
+
+        var sorteio = Math.random();
+
+            if ((sorteio*23).toFixed() <=11) {
+                msg.innerHTML = `Bom dia, flor do dia, são ${(sorteio*23).toFixed()} horas!`
+            }
+
+            if ((sorteio*23).toFixed() >11) {
+                msg.innerHTML = `Boa tarde, já vai tarde! São ${(sorteio*23).toFixed()} horas!`
+            }
+
+            if ((sorteio*23).toFixed() >17) {
+                msg.innerHTML = `Boa noite, durma bem! São ${(sorteio*23).toFixed()} horas!`
+            }
+    }
+
+</script>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<center>
+
+    <h1>Sistema de avaliação</h1> <br>
+    <button onclick="avaliar()">Avaliar</button> <br><br>
+    <div id="nota"></div> <br><br>
+
+    <img id="muitotriste" src="https://pbs.twimg.com/media/BsDdpVhCEAAN105.jpg" style="display: none; width: 300px;">
+
+    <img id="meiotriste" src="https://sportbuzz.uol.com.br/media/_versions/design_sem_nome_3_Jcb4nfg_widelg.png" style="display: none; width: 300px;">
+
+    <img id="neutro" src="https://lh3.googleusercontent.com/proxy/Ktk-UvlUqtNuYbroE8QJHHMpjXbDpYjgP86RAFQX1YySxNADBezwwbF6lAoamzKjruPYO-gWA0bBaxnLRkFhUnJs9sqio-hRjJQY" style="display: none; width: 300px;">
+
+    <img id="feliz" src="https://i0.wp.com/saopaulo.blog/wp-content/uploads/2019/04/reinaldo.jpg?fit=1024%2C682&ssl=1" style="display: none; width: 300px;">
+    
+    <img id="muitofeliz" src="https://i.ytimg.com/vi/wMxogM3njrU/hqdefault.jpg" style="display: none; width: 300px;">
+
+</center>
+
+</body>
+</html>
+<script>
+
+    var num = 0;
+
+    function avaliar() {
+
+        num = (Math.random()*5).toFixed(1)
+
+        if (num < 0.6) {
+
+            nota.innerHTML = `Sua nota é: ${num}`
+
+            muitotriste.style.display = 'block'
+            meiotriste.style.display = 'none'
+            neutro.style.display = 'none'
+            feliz.style.display = 'none'
+            muitofeliz.style.display = 'none'
+            
+        }
+
+        if (num > 0.5 && num < 1.6) {
+
+            nota.innerHTML = `Sua nota é: ${num}`
+
+            muitotriste.style.display = 'none'
+            meiotriste.style.display = 'block'
+            neutro.style.display = 'none'
+            feliz.style.display = 'none'
+            muitofeliz.style.display = 'none'
+
+        }
+    
+        if (num > 1.5 && num < 3.5) {
+
+            nota.innerHTML = `Sua nota é: ${num}`
+
+            muitotriste.style.display = 'none'
+            meiotriste.style.display = 'none'
+            neutro.style.display = 'block'
+            feliz.style.display = 'none'
+            muitofeliz.style.display = 'none'
+
+            }
+
+        if (num > 3.5 && num < 4.5) {
+
+            nota.innerHTML = `Sua nota é: ${num}`
+
+            muitotriste.style.display = 'none'
+            meiotriste.style.display = 'none'
+            neutro.style.display = 'none'
+            feliz.style.display = 'block'
+            muitofeliz.style.display = 'none'
+
+            }
+
+        if (num > 4.5) {
+
+            nota.innerHTML = `Sua nota é: ${num}`
+
+            muitotriste.style.display = 'none'
+            meiotriste.style.display = 'none'
+            neutro.style.display = 'none'
+            feliz.style.display = 'none'
+            muitofeliz.style.display = 'block'
+
+            }
+
+        
+    } 
+
+</script>

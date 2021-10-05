@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: white;">
+
+    <center>
+
+        <button onclick="nota()">Gerar nota</button> <button onclick="frequencia()">Gerar frequencia</button> <br><br>
+
+        <div id="msgnota"></div>
+        <div id="msgfrequencia"></div> <br><br>
+
+        <button onclick="aprovar()">Aprovado?</button> <br><br>
+
+        <div id="msgaprova"></div>
+
+    </center>
+
+</body>
+</html>
+<script>
+
+var nueta = 0; 
+var frek = 0; 
+
+    function nota() {
+
+        nueta = (Math.random()*7+3).toFixed();
+
+        msgnota.innerHTML = `A nota gerada é: ${nueta}`
+
+    } 
+
+    function frequencia() {
+        
+        frek = (Math.random()*50+50).toFixed();
+
+        msgfrequencia.innerHTML = `Sua frequeência é: ${frek}%`
+
+    }
+
+    function aprovar() {
+
+    if (nueta > 5 && frek > 60) {
+
+        msgaprova.innerHTML = `Aprovado`;
+
+    }
+
+    else {
+
+        msgaprova.innerHTML = `Reprovado`;
+
+    }
+
+}
+
+
+
+
+
+</script>

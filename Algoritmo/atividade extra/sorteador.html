@@ -10,12 +10,12 @@
     <center>
     
         <h1>Sorteador dos maiores times de SP</h1> <br>
-        <button onclick="sortear()">Sortear</button>
+        <button onclick="sortear()">Sortear</button> <br> <br>
         
-        <img id="sp" src="https://a.espncdn.com/i/teamlogos/soccer/500/2026.png" style="display: none;">
-        <img id="quinze" src="https://a-static.mlcdn.com.br/224x224/painel-de-festa-futebol-xv-de-piracicaba-10-colormyhome/colormyhome/995/1934bde5e9ae951323f5bd9bdb56f9e0.jpg" style="display: none;">
-        <img id="ponte" src="https://pbs.twimg.com/profile_images/1324032350406193152/J0P6Yuip.jpg" style="display: none;">
-        <img id="guarani" src="https://cdn.freebiesupply.com/logos/thumbs/2x/guarani-futebol-clube-de-campinas-sp-logo.png" style="display: none;">
+        <img id="sp" src="https://a.espncdn.com/i/teamlogos/soccer/500/2026.png" style="display: none; width: 150px">
+        <img id="quinze" src="https://a-static.mlcdn.com.br/224x224/painel-de-festa-futebol-xv-de-piracicaba-10-colormyhome/colormyhome/995/1934bde5e9ae951323f5bd9bdb56f9e0.jpg" style="display: none; width: 150px;">
+        <img id="ponte" src="https://pbs.twimg.com/profile_images/1324032350406193152/J0P6Yuip.jpg" style="display: none; width: 150px">
+        <img id="guarani" src="https://cdn.freebiesupply.com/logos/thumbs/2x/guarani-futebol-clube-de-campinas-sp-logo.png" style="display: none; width: 150px">
         
     </center>
 </body>
@@ -26,21 +26,33 @@
 
     function sortear() {
 
-    var sorteio = Math.randon();
+    var sorteio = Math.random();
 
-    if (sorteio*3 ) {
-        sp.style.display = 'block'
+    if ((sorteio*3).toFixed() ==0) {
+        sp.style.display = 'none'
+        quinze.style.display = 'block'
+        ponte.style.display = 'none'
+        guarani.style.display = 'none'
     }
 
-    if (sorteio*3 ==1) {
-        quinze.style.display = 'block'
+    if ((sorteio*3).toFixed() ==1) {
+        sp.style.display = 'block'
+        quinze.style.display = 'none'
+        ponte.style.display = 'none'
+        guarani.style.display = 'none'
     } 
 
-    if (sorteio*3 ==2) {
+    if ((sorteio*3).toFixed() ==2) {
+        sp.style.display = 'none'
+        quinze.style.display = 'none'
         ponte.style.display = 'block'
+        guarani.style.display = 'none'
     }
 
-    if (sorteio*3 ==3) {
+    if ((sorteio*3).toFixed() ==3) {
+        sp.style.display = 'none'
+        quinze.style.display = 'none'
+        ponte.style.display = 'none'
         guarani.style.display = 'block'
     }
 
