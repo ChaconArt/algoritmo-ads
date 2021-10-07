@@ -1,44 +1,17 @@
-
-.body {
-    background-image: url(https://mobilidadesampa.com.br/wp-content/uploads/2020/12/Horario-de-funcionamento-dos-shoppings.jpg);
-    background-repeat: no-repeat;    
-}
-
-* {
-    padding: 0%;
-    margin: 0%;
-    background-color: #9904D3;
+.header {
+    background-color: white;
+    justify-content: center;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+    color: white;
 }
-
-.header {
-    color: #9904D3;
-    background-color: #fff;
-}
-
-.selecionado {
-    font-weight: bold;
-}
-
 
 .navbar {
-    background-color: #fff;
-    width: 800px;
-    display: flex;
-    justify-content:space-evenly;
-    list-style: none;
+    color: white;
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-}
 
-.header a {
-    text-decoration: none;
-    color: #fff;  
+* {
+    background-color: #9904D3;
 }

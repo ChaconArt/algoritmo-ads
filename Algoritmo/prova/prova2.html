@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação 2</title>
+</head>
+<body>
+    <div style="display: block;" id="telaum">
+
+        <h1>Aco Pip – AS MELHORES PIPOCAS DO BRASIL</h1> <br>
+
+            <select id="produto">
+                <option value="padraopipoca">Selecione o produto...</option>
+                <option value="chocolate">Pipoca com Chocolate</option>
+                <option value="caramelo">Pipoca com Caramelo</option>
+            </select>
+
+            <select id="embalagem">
+                <option value="padraoembalagem">Selecione a embalagem...</option>
+                <option value="pctpequeno">Pacote Pequeno</option>
+                <option value="pctgrande">Pacote Grande</option>
+            </select> 
+
+                <br><br>
+
+                Quantidade de pipoca: <input id="quantidade_pipoca"> Quantidade de açucar: <input id="quantidade_acucar"> <br><br>
+
+                <button onclick="orcar()">Orçar</button> <br><br>
+    </div>
+
+    <div id="telaorcamento"></div> <br><br>
+    <div id="msgacucar"></div> <br><br>
+
+    <button id="buttonnovo" onclick="novoorcamento()" style="display: none;">Novo orçamento</button>
+    <button id="buttoncompra" onclick="comprar()" style="display: none;">comprar</button>
+
+</body>
+</html>
+<script>
+
+    var valororc = 0;
+    var acucar_adicional = 0;
+    var bonus = 0
+    var desconto = 0
+
+    function orcar() {
+
+        if (quantidade_pipoca.value <500) {
+            alert ("Vendemos somente no atacado")
+        }
+
+        if (quantidade_pipoca.value >5000) {
+            alert ("Consulte nosso PCP (planejamento e controle da produção)")
+        }
+
+        if (quantidade_acucar.value <0 || quantidade_acucar.value >8) {
+            alert ("Quantidade adicional de açúcar invalida")
+        }
+
+        if (produto.value == 'chocolate' && embalagem.value == 'pctpequeno') {
+
+            valororc = 1.20 * quantidade_pipoca.value; 
+
+            telaorcamento.innerHTML = `
+                <b>Resumo do Orçamento</b>
+                <br><br>
+                Quantidade Solicitada: ${quantidade_pipoca.value}
+                <br><br>
+                Embalagem Selecionada: Pacote pequeno
+                <br><br>
+                Produto Selecionado: Pipoca com chocolate
+                <br><br>
+                O Valor Total das Pipocas é de R$ ${(valororc).toFixed(2)}
+            `;
+            
+            buttonnovo.style.display = 'block'
+            buttoncompra.style.display = 'block'
+        }
+
+        if (produto.value == 'chocolate' && embalagem.value == 'pctgrande') {
+
+            valororc = 1.80 * quantidade_pipoca.value; 
+
+            telaorcamento.innerHTML = `
+                <b>Resumo do Orçamento</b>
+                <br><br>
+                Quantidade Solicitada: ${quantidade_pipoca.value}
+                <br><br>
+                Embalagem Selecionada: Pacote grande
+                <br><br>
+                Produto Selecionado: Pipoca com chocolate
+                <br><br>
+                O Valor Total das Pipocas é de R$ ${(valororc).toFixed(2)}
+            `;
+            
+            buttonnovo.style.display = 'block'
+            buttoncompra.style.display = 'block'
+        }
+
+        if (produto.value == 'caramelo' && embalagem.value == 'pctpequeno') {
+
+            valororc = 1.10 * quantidade_pipoca.value; 
+
+            telaorcamento.innerHTML = `
+                <b>Resumo do Orçamento</b>
+                <br><br>
+                Quantidade Solicitada: ${quantidade_pipoca.value}
+                <br><br>
+                Embalagem Selecionada: Pacote pequeno
+                <br><br>
+                Produto Selecionado: Pipoca com caramelo
+                <br><br>
+                O Valor Total das Pipocas é de R$ ${(valororc).toFixed(2)}
+            `;
+
+            buttonnovo.style.display = 'block'
+            buttoncompra.style.display = 'block'
+        }
+
+        if (produto.value == 'caramelo' && embalagem.value == 'pctgrande') {
+
+            valororc = 1.70 * quantidade_pipoca.value; 
+
+            telaorcamento.innerHTML = `
+                <b>Resumo do Orçamento</b>
+                <br><br>
+                Quantidade Solicitada: ${quantidade_pipoca.value}
+                <br><br>
+                Embalagem Selecionada: Pacote grande
+                <br><br>
+                Produto Selecionado: Pipoca com caramelo
+                <br><br>
+                O Valor Total das Pipocas é de R$ ${(valororc).toFixed(2)}
+            `;
+
+            buttonnovo.style.display = 'block'
+            buttoncompra.style.display = 'block'
+        }
+
+        if (quantidade_acucar.value >4) {
+
+            acucar_adicional = valororc * 0.07;
+
+            msgacucar.innerHTML = `Para essa quantidade adicional de açúcar será cobrado um adicional de R$ ${(acucar_adicional).toFixed(2)}`
+
+            buttonnovo.style.display = 'block'
+            buttoncompra.style.display = 'block'
+
+        }
+
+    }
+
+    function novoorcamento() {
+
+        valororc = 0;
+        acucar_adicional = 0;
+
+        produto.value = 'padraopipoca';
+        embalagem.value = 'padraoembalagem';
+        quantidade_acucar.value = '';
+        quantidade_pipoca.value = '';
+        msgacucar.innerHTML = '';
+        telaorcamento.innerHTML = '';
+        buttonnovo.style.display = 'none';
+        buttoncompra.style.display = 'none';
+
+    }
+
+    function comprar() {
+
+        bonus = Math.random() * 2 + 3,5;
+        desconto = (valororc / 100) * bonus;
+
+        alert ("PARABÉNS!!! Você recebeu um bônus de " + (bonus).toFixed(1) + "% , na sua próxima compra você terá um bônus de R$ " + (desconto).toFixed(2));
+
+        produto.value = 'padraopipoca';
+        embalagem.value = 'padraoembalagem';
+        quantidade_acucar.value = '';
+        quantidade_pipoca.value = '';
+        msgacucar.innerHTML = '';
+        telaorcamento.innerHTML = '';
+        buttonnovo.style.display = 'none';
+        buttoncompra.style.display = 'none';
+        valororc = 0;
+        acucar_adicional = 0;
+
+    }
+
+
+
+
+
+</script>
