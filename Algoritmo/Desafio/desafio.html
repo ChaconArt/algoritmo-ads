@@ -8,10 +8,208 @@
 </head>
 <body>
 
-    <h1>Seja bem vindo ao banco KNAB</h1> <br><br>
-    <h2>Simulação de empréstimos e investimentos</h2> <br><br>
-    <h3>Entre com os dados da sua conta:</h3>
-    <input placeholder="Conta"> <input placeholder="Digito"> <input placeholder="Senha"> <br> <br> <br>
-    <button onclick="simular()">Simular</button>
+    <div id="telalogin" style="display: block;">
+
+        <h1>Seja bem vindo ao banco KNAB</h1> <br><br>
+        <h2>Simulação de empréstimos e investimentos</h2> <br><br>
+        <h3>Entre com os dados da sua conta:</h3>
+            <input id="conta" placeholder="conta"> 
+            <input id="digito" placeholder="digito"> 
+            <input id="senha" placeholder="senha"> <br> <br> <br>
+        <button onclick="simular()">Simular</button>
+
+    </div>
+
+    <div id="telasimulacao" style="display: none;">
+
+        <h1>O Banco KNAB é a sua melhor opção</h1> <br><br>
+        <h2>Empréstimos e investimentos com as melhores taxas do mercado</h2> <br><br>
+        <h3>Entre com os dados da sua Simulação</h3> <br><br>
+        Valor da operação: <input type="text" placeholder="valor" id="ipt_valor"> <br> <br>
+
+            <select id="operacao">
+                <option value="padraoop">Selecione a operação...</option>
+                <option value="emprestimo">Empréstimo</option>
+                <option value="investimento">Investimento</option>
+            </select>
+
+            <select id="prazo">
+                <option value="padraopr">Selecione o prazo...</option>
+                <option value="curto">Curto</option>
+                <option value="medio">Médio</option>
+                <option value="longo">Longo</option>
+            </select> <br> <br>
+
+            <button onclick="resultado()">Mostrar resultado</button>
+
+
+    </div>
+
+
+    <center>
+
+        <div id="aviso" style="display: none;"> 
+
+            <img src="https://www.mercantec.com.br/wp-content/uploads/2019/06/Padr%C3%A3o-img_.jpg" style="width: 200px;"> <br><br> 
+            <button onclick="remake()">Refazer login</button>
+            
+        </div>
+
+    </center>
+
+    <center>
+
+        <div id="msgop" style="display: none;">
+        
+            <button onclick="retornosimulacao()">Voltar a Simulação</button> <br>
+
+        </div>
+
+    </center>
 </body>
 </html>
+<script>
+
+var idsimulacao = 0;
+
+    function simular() {
+
+                if (conta.value !=0 && digito.value == conta.value%11 && digito.value <=3 && senha.value == 'manaus' || digito.value >=4 && digito.value <=7 && senha.value == 'recife' || senha.value == 'fortaleza') {
+
+                    telasimulacao.style.display = 'block';
+                    telalogin.style.display = 'none';
+
+                }
+
+                else {
+                    
+                    aviso.style.display = 'block';
+                    telalogin.style.display = 'none';
+                    
+                }
+                
+                
+    }
+
+    function remake () {
+
+        telalogin.style.display = 'block';
+        telasimulacao.style.display = 'none';
+        aviso.style.display = 'none';
+        conta.value = '';
+        digito.value = '';
+        senha.valuesenha = '';
+
+    }
+
+    function retornosimulacao() {
+
+        telalogin.style.display = 'none';
+        msgop.style.display = 'none';   
+        telasimulacao.style.display = 'block';
+        ipt_valor.value = '';
+        operacao.value = 'padraoop';
+        prazo.value = 'padraopr';
+
+
+    }
+
+    function resultado () {
+
+        var axvalor = ipt_valor.value;
+        var empcur = ipt_valor.value * 0.24;
+        var empmed = ipt_valor.value * 0.16;
+        var emplon = ipt_valor.value * 0.10;
+        var invcur = ipt_valor.value * 0.05;
+        var invmed = ipt_valor.value * 0.08;
+        var invlon = ipt_valor.value * 0.12;
+
+        telalogin.style.display = 'none';
+        telasimulacao.style.display = 'none';
+        aviso.style.display = 'none';
+
+        if (prazo.value == 'curto' || prazo.value == 'medio' || prazo.value == 'longo') {
+
+            alert ('Esta operação está condicionada ao seu perfil.');
+
+        }
+
+        if (prazo.value == 'curto' && operacao.value == 'emprestimo') {
+
+            idsimulacao ++;
+            msgop.style.display = 'block';
+            msgop.innerHTML += `<br>Simulação ${idsimulacao} – Para o empréstimo de R$ ${axvalor} no ${prazo.value} prazo será cobrado os juros de R$ ${empcur} ao ano.<br>`
+
+        }
+
+        if (prazo.value == 'medio' && operacao.value == 'emprestimo') {
+            
+            idsimulacao ++;
+            msgop.style.display = 'block';
+            msgop.innerHTML += `<br>Simulação ${idsimulacao} – Para o empréstimo de R$ ${axvalor} no ${prazo.value} prazo será cobrado os juros de R$ ${empmed} ao ano.<br>`
+
+        }
+
+        if (prazo.value == 'longo' && operacao.value == 'emprestimo') {
+
+            idsimulacao ++;
+            msgop.style.display = 'block';
+            msgop.innerHTML += `<br>Simulação ${idsimulacao} – Para o empréstimo de R$ ${axvalor} no ${prazo.value} prazo será cobrado os juros de R$ ${emplon} ao ano.<br>`
+
+        }
+
+        if (prazo.value == 'curto' && operacao.value == 'investimento') {
+
+            idsimulacao ++;
+            msgop.style.display = 'block';
+            msgop.innerHTML += `<br>Simulação ${idsimulacao} –  Investindo R$ ${axvalor} no ${prazo.value} prazo o seu rendimento será de R$ ${invcur} ao ano.<br>`
+
+        } 
+
+        if (prazo.value == 'medio' && operacao.value == 'investimento') {
+
+            idsimulacao ++;
+            msgop.style.display = 'block';
+            msgop.innerHTML += `<br>Simulação ${idsimulacao} –  Investindo R$ ${axvalor} no ${prazo.value} prazo o seu rendimento será de R$ ${invmed} ao ano.<br>`
+
+            }
+
+        if (prazo.value == 'longo' && operacao.value == 'investimento') {
+
+            idsimulacao ++;
+            msgop.style.display = 'block'
+            msgop.innerHTML += `<br> Simulacao ${idsimulacao} –  Investindo R$ ${axvalor} no ${prazo.value} prazo o seu rendimento será de R$ ${invlon} ao ano.<br>`
+
+        }
+
+        else {
+
+            telalogin.style.display = 'none';
+            aviso.style.display = 'none';
+            telasimulacao.style.display = 'none';
+            msgop.style.display = 'block';
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
