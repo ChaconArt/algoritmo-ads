@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <h1>Preencha o formulário:</h1>
+        Nome: <input id="nomeuser" type="text">                         <br>
+        1º Número da sorte: <input id="numuser1" type="number">         <br>
+        2º Número da sorte: <input id="numuser2" type="number">         <br>
+        3º Número da sorte: <input id="numuser3" type="number">         <br>
+        <button onclick="sorteio()">Sortear</button>                    <br>
+        <div id="msg"></div>    
+        <div id="msg2"></div>
+        <div id="msg3"></div>
+</body>
+</html>
+<script>
+
+    var numsorteio = 0
+    var tentativas = 0
+
+    function sorteio() {
+
+        if (numuser1.value <1 || numuser1.value > 10 || numuser2.value <1 || numuser2.value > 10 || numuser3.value <1 || numuser3.value > 10) {
+            alert ('É aceito somente números de 1 a 10')
+        }
+
+        if (numuser1.value >=1 && numuser1.value <=10 && numuser2.value >=1 && numuser2.value <=10 && numuser3.value >=1 && numuser3.value <=10) {
+
+            tentativas++;
+            numsorteio = (Math.random()*10+1).toFixed()
+
+        }
+
+        if (numuser1.value == numsorteio) {
+            
+            msg.innerHTML = `Parabéns, ${nomeuser.value} o seu número da sorte ${numuser1.value} foi sorteado(a) após ${tentativas} sorteios!`
+
+        }
+
+        if (numuser2.value == numsorteio) {
+            
+            msg2.innerHTML = `Parabéns, ${nomeuser.value} o seu número da sorte ${numuser2.value} foi sorteado(a) após ${tentativas} sorteios!`
+
+        }
+
+        if (numuser3.value == numsorteio) {
+            
+            msg3.innerHTML = `Parabéns, ${nomeuser.value} o seu número da sorte ${numuser3.value} foi sorteado(a) após ${tentativas} sorteios!`
+
+        }
+
+        if (numuser1.value != numsorteio) {
+
+            msg.innerHTML = `Tente de novo!`
+
+        }
+
+        if (numuser2.value != numsorteio) {
+
+            msg2.innerHTML = `Tente de novo!`
+
+        }
+
+        if (numuser3.value != numsorteio) {
+
+            msg3.innerHTML = `Tente de novo!`
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

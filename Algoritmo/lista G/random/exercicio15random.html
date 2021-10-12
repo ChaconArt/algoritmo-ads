@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Números pares: <b id="par">0</b>        <br>
+        Números ímpares: <b id="impar">0</b>    <br>
+        <button onclick="sorteio()">Sortear número</button> <br>
+        <div id="msg"></div>
+    </h2>
+</body>
+</html>
+<script>
+
+    var numsorteio = 0;
+    var maispar = 0;
+    var maisimpar = 0;
+
+    function sorteio() {
+
+        numsorteio = (Math.random()*-21-9).toFixed();
+
+        msg.innerHTML = `${numsorteio}`
+
+        if (numsorteio%2 == -0) {
+            maispar ++;
+            par.innerHTML = maisimpar; 
+        }
+
+        else {
+            maisimpar++;
+            impar.innerHTML = maisimpar;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
