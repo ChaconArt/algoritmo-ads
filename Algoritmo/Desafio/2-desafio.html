@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+<body>
+
+Quantos números você deseja sortear? <input type="number" id="numnum">
+<button onclick="sortear()">Sortear números</button>
+<div id="msg"></div>
+
+</body>
+</html>
+<script>
+
+    function sortear() {
+
+        var ax_cont = 0;
+        
+        while (ax_cont < numnum.value) {
+
+            ax_cont++;
+            
+            msg.innerHTML += `<br> ${(Math.random()*100).toFixed()}`
+            
+        }
+
+    }
+
+</script>
