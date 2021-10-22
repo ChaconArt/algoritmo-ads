@@ -7,6 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button onclick="exibir()">Números cabalísticos</button>
+    <div id="msg"></div>
 </body>
 </html>
+<script>
+
+    var num = 0
+
+    function exibir() {
+
+        while (num<15) {
+            num++;
+            msg.innerHTML +=`<br> ${num}`
+
+                if  (num == '3') {
+                msg.innerHTML += ``;
+            }
+        }
+
+        
+
+
+    }
+</script>
