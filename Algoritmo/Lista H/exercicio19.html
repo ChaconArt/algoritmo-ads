@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19</title>
+</head>
+<body>
+    <center>
+
+        <h2>Seu trajeto</h2>
+        Quantos ônibus você pega?<input id="ipt_bus" type="number"> <br>
+        Quantos trens você pega?<input id="ipt_met" type="number"> <br>
+        Quantos metrôs você pega?<input id="ipt_m" type="number"> <br> <br>
+        <button onclick="partiu()">Partiu trajeto</button>
+
+        <div id="msgbus"></div>
+        <div id="msgtrem"></div>
+        <div id="msgmetros"></div>
+
+    </center>
+</body>
+</html>
+<script>
+
+    var busao = 0;
+    var trem = 0;
+    var metros = 0;
+    var operador =0;
+
+    function partiu() {
+
+        busao = ipt_bus.value;
+        trem = ipt_met.value;
+        metros = ipt_m.value;
+
+        msgbus.innerHTML = ``
+        msgtrem.innerHTML = ``
+        msgmetros.innerHTML = ``
+
+        operador = 1;
+    
+        while (operador< Number (busao) + Number (1)) {
+            
+
+            if (operador==1) {
+                msgbus.innerHTML += `<br> <span style="color: red;">Pegando o ${operador}º buzão</span>`;
+            }
+ 
+            if (operador==2) {
+                msgbus.innerHTML += `<br> <span style="color: red;">Pegando o ${operador}º buzão - Começando a cansar </span>`
+            }
+
+            if (operador>=3) {
+                msgbus.innerHTML += `<br> <span style="color: red;">Pegando o ${operador}º buzão - Já cansado!</span>`
+            }
+
+            operador ++;
+            
+        }
+
+        operador = 1;
+
+        while (operador< Number (trem) + Number (1)) {
+
+            if (operador==1) {
+                msgtrem.innerHTML += `<br> <span style="color: green;">Pegando o ${operador}º trem</span>`
+            }
+
+            if (operador==2) {
+                msgtrem.innerHTML += `<br> <span style="color: green;">Pegando o ${operador}º trem - Começando a cansar </span>`
+            }
+
+            if (operador>=3) {
+                msgtrem.innerHTML += `<br> <span style="color: green;">Pegando o ${operador}º trem - Já cansado! </span>`
+            }
+        
+            operador++;
+            
+        }
+
+        operador = 1;
+
+        while (operador< Number (metros) + Number (1)) {
+
+            if (operador==1) {
+                msgmetros.innerHTML += `<br> <span style="blue: green;">Pegando o ${operador}º metro</span>`
+            }
+
+            if (operador==2) {
+                msgmetros.innerHTML += `<br> <span style="blue: green;">Pegando o ${operador}º metro - Começando a cansar </span>`
+            }
+
+            if (operador>=3) {
+                msgmetros.innerHTML += `<br> <span style="blue: green;">Pegando o ${operador}º metro - Já cansado! </span>`
+            }
+
+            operador++;
+        }
+
+        operador = 1;
+
+    }
+
+</script>
