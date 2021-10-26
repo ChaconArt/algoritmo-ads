@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Diga algo sobe a quarentena: <input id="ipt_1" type="text">
+    <button onclick="bora()">Bora lá</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    function bora() {
+
+        for (var operador = 1; operador<=7; operador++) {
+            msg.innerHTML += `<br> ${operador} ${ipt_1.value}`
+        }
+
+
+    }
+
+</script>
