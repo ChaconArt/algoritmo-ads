@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 14 FOR</title>
+</head>
+<body>
+    <center>
+
+        <h2>Cofre</h2>
+        Quantos depósitos você fez? <input id="deposito" type="number"> <br>
+        Qual valor em cada deposito? <input id="valordep" type="number"> <br>
+        <button onclick="func()">Acompanhar grana</button>
+        <div id="msg"></div>
+
+    </center>
+</body>
+</html>
+<script>
+
+    function func() {
+
+        var total = 0;
+
+        for (var operador = 1; operador<=deposito.value; operador ++) {
+            
+            total += Number (valordep.value);
+            msg.innerHTML+= `<br> ${operador}º mês: R$${total} `
+        }
+
+        msg.innerHTML += `<br> <b>Total guardado: ${total}</b>`;
+
+    }
+
+</script>
