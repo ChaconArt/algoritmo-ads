@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21</title>
+</head>
+<body>
+    <h1>Teste sua sorte!</h1>
+    Digite seu número da sorte, entre 0 e 100: <input type="number" id="numero_sorte"> <button onclick="valendo()">Valendo!</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    var sorteador = 0;
+
+    function valendo() {
+
+        if (numero_sorte.value < 0 || numero_sorte.value >100) {
+            alert ('Digite um número aceito!')
+            numero_sorte.innerHTML = ``
+        } 
+
+        if (numero_sorte.value >= 0 && numero_sorte.value <=100) {
+
+            for (var operador = 1; sorteador == numero_sorte.value; operador++) {
+
+            sorteador = (Math.random()*100).toFixed()
+
+                if (sorteador == numero_sorte.value) {
+                alert ('Foram necessários ' + operador +' sorteios')
+                }
+            }
+            
+        }
+    }
+
+</script>

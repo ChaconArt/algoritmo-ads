@@ -4,74 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chacon's crossword</title>
+    <title>Chacon's Crossword</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    .box-left {
-        display: flex;
-        height: 100vh;
-        width: 50vw;
-        position: fixed;
-    }
-
-    .header {
-        display: flex;
-        height: 20vh;
-        align-items: center;
-    }
-
-    .box-left img {
-        width:10px;
-        height: 10px;
-    }
-
-    .box-left .box-crossword {
-        display: grid;
-        grid-template-columns: repeat(19, 35px);
-        align-self: center;
-        margin-left: -16vw;
-        justify-self: center;
-        height: 50%;
-        width: 70%;
-    }
-
-    .box-on {
-        margin: 2px 2px 2px 2px;
-        border-radius: 10px;
-        color: yellow;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
-        font-size: x-large;
-        text-align: center;
-        background-color: #007fff;
-
-    }
-
-    .box-off {
-        margin: 2px 2px 2px 2px;
-        border-radius: 10px;
-        background-color: white;
-    }
-
-    .box-right {
-        background-color: gray;
-        display: flex;
-        height: 100vh;
-        width: 50vw;
-        margin-left: 50vw;
-    }
-
-</style>
 <body>
     <div class="box-left">
 
-        <div class="header"><h1>Chacon' crossword</h1> <img src="./images.jfif"></div>
+        <div class="header"><h1>Chacon's crossword</h1> <img src="./images.jfif"></div>
 
             <div class="box-crossword">
 
@@ -138,6 +77,7 @@
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-on">D</div>
+                <div class="box-off">4</div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
@@ -154,29 +94,28 @@
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
-                <div class="box-off"></div>
-                <div class="box-off"></div>
-                <div class="box-on"></div>
-                <div class="box-on">R</div>
-                <div class="box-on">E</div>
-                <div class="box-on">G</div>
-                <div class="box-on">I</div>
-                <div class="box-on">S</div>
-                <div class="box-on">T</div>
-                <div class="box-on">R</div>
-                <div class="box-on">A</div>
-                <div class="box-on">D</div>
-                <div class="box-on">O</div>
-                <div class="box-on">R</div>
-                <div class="box-on">E<Em></Em></div>
-                <div class="box-on">S</div>
+                <div class="box-off">3</div>
+                <div class="box-on" id="sempreamarelo">-</div>
+                <div class="box-on" id="rregis">R</div>
+                <div class="box-on" id="eregis">E</div>
+                <div class="box-on" id="gregis">G</div>
+                <div class="box-on" id="iregis">I</div>
+                <div class="box-on" id="sregis">S</div>
+                <div class="box-on" id="tregis">T</div>
+                <div class="box-on" id="rrregis">R</div>
+                <div class="box-on" id="aregis">A</div>
+                <div class="box-on" id="dregis">D</div>
+                <div class="box-on" id="oregis">O</div>
+                <div class="box-on" id="rrrregis">R</div>
+                <div class="box-on" id="eeregis">E</div>
+                <div class="box-on" id="ssregis">S</div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-on">C</div>
-                <div class="box-on">A</div>
+                <div class="box-on" id="aram">A</div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-on">7</div>
@@ -195,7 +134,7 @@
                 <div class="box-on">P</div>
                 <div class="box-on">R</div>
                 <div class="box-on">O</div>
-                <div class="box-on">M</div>
+                <div class="box-on" id="mram">M</div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
@@ -258,7 +197,7 @@
                 <div class="box-on">R</div>
                 <div class="box-on">E</div>
                 <div class="box-off"></div>
-                <div class="box-off"></div>
+                <div class="box-off">2</div>
                 <div class="box-off"></div>
                 <div class="box-on">B</div>
                 <div class="box-off"></div>
@@ -274,10 +213,10 @@
                 <div class="box-off"></div>
                 <div class="box-off"></div>
                 <div class="box-off"></div>
-                <div class="box-off"></div>
-                <div class="box-on">C</div>
-                <div class="box-on">P</div>
-                <div class="box-on">U</div>
+                <div class="box-off">1</div>
+                <div class="box-on" id="ccpu">C</div>
+                <div class="box-on" id="pcpu">P</div>
+                <div class="box-on" id="ucpu">U</div>
                 <div class="box-off"></div>
                 <div class="box-on">U</div>
                 <div class="box-off"></div>
@@ -296,7 +235,7 @@
                 <div class="box-off"></div>
                 <div class="box-on">S</div>
                 <div class="box-on">F</div>
-                <div class="box-on">L</div>
+                <div class="box-on" id="lula">L</div>
                 <div class="box-on">A</div>
                 <div class="box-on">S</div>
                 <div class="box-on">H</div>
@@ -315,7 +254,7 @@
                 <div class="box-on">E</div>
                 <div class="box-on"></Div>
                 <div class="box-on">M</div>
-                <div class="box-on">A</div>
+                <div class="box-on" id="aula">A</div>
                 <div class="box-on">S</div>
                 <div class="box-on">S</div>
                 <div class="box-on">A</div>
@@ -347,6 +286,167 @@
 
     </div>
 
-    <div class="box-right"></div>
+    <div class="box-right">
+
+        <h1>Perguntas:</h1>
+
+        <!-- Pergunta CPU -->
+        1 - Ele é o principal item de hardware do computador. É responsável por calcular e realizar tarefas determinadas pelo usuário e é considerado o cérebro do PC.
+        <input id="pergunta_cpu" type="text" placeholder="3 LETRAS"> <button onclick="conferir_cpu()">Conferir</button>
+
+        <!-- Pergunta ULA -->
+        2 - É um dispositivo que realiza operações lógicas e aritméticas sobre números representados em circuitos lógicos. Tipicamente, recebe dois operandos como entrada, e uma entrada auxiliar de controle permite especificar qual operação deverá ser realizada.
+        <input id="pergunta_ula" type="text" placeholder="3 LETRAS"> <button onclick="conferir_ula()">Conferir</button>
+
+        <!-- Pergunta registradores -->
+        3 - São circuitos digitais capazes de armazenar e deslocar informações binárias, e são tipicamente usados como um dispositivo de armazenamento temporário. São utilizados na execução de programas de computadores, disponibilizando um local para armazenar dados e instruções.
+        <input id="pergunta_registradores" type="text" placeholder="13 LETRAS"> <button onclick="conferir_registradores()">Conferir</button>
+
+        <!-- Pergunta RAM -->
+        4 - É um espaço de armazenamento temporário do seu PC. Ela é usada para armazenar dados que estão sendo processados neste momento pela sua máquina.
+        <input id="pergunta_ram" type="text" placeholder="3 LETRAS"> <button onclick="conferir_ram()">Conferir</button>
+
+        <!-- Pergunta ROM -->
+        5 - Permite a gravação de dados uma única vez, não sendo possível apagar ou editar nenhuma informação, somente acessar a mesma.
+        <input id="pergunta_rom" type="text" placeholder="3 LETRAS"> <button onclick="conferir_rom()">Conferir</button>
+
+        <!-- Pergunta EPROM -->
+        6 - É um tipo de chip de memória de computador que mantém seus dados quando a energia é desligada. Em outras palavras, é não volátil.
+        <input id="pergunta_eprom" type="text" placeholder="5 LETRAS"> <button onclick="conferir_eprom()">Conferir</button>
+
+        <!-- Pergunta Dual Core -->
+        7 - É formado por dois núcleos que funcionam ao mesmo tempo, para funções diferentes.
+        <input id="pergunta_dualcore" type="text" placeholder="4 LETRAS, 4 LETRAS"> <button onclick="conferir_dualcore()">Conferir</button>
+
+        <!-- Pergunta Quad Core -->
+        8 - É aquele processador que possui quatro núcleos e trabalha com todos eles ao mesmo tempo, executando várias funções! Ele é uma versão mais potente e melhora o desempenho na hora de usar vários apps ao mesmo tempo ou rodar jogos pesados com ainda mais velocidade.
+        <input id="pergunta_quadcore" type="text" placeholder="4 LETRAS, 4 LETRAS"> <button onclick="conferir_quadcore()">Conferir</button>
+
+        <!-- Pergunta Flash -->
+        9 - É um tipo de dispositivo de armazenamento não volátil, ou seja, mesmo se não tiver energia, manterá as informações que salvas nela.
+        <input id="pergunta_flash" type="text" placeholder="5 LETRAS"> <button onclick="conferir_flash()">Conferir</button>
+
+        <!-- Pergunta memória de massa -->
+        10 - Tem como função armazenar grandes quantidades de informações.
+        <input id="pergunta_memoriademassa" type="text" placeholder="7 LETRAS, 2 LETRAS, 5 DE MASSA"> <button onclick="conferir_memoriademassa()">Conferir</button>
+
+        <!-- Pergunta DMA -->
+        11 - Sigla do recurso da placa mãe que capacita os periféricos a terem acesso direto à memória RAM, sem sobrecarregarem o processador.
+        <input id="pergunta_dma" type="text" placeholder="3 LETRAS"> <button onclick="conferir_dma()">Conferir</button>
+
+        <!-- Pergunta Chip Select -->
+        12 - É um mecanismo fundamental para permitir à CPU acessar memórias e/ou periféricos externos.
+        <input id="pergunta_cs" type="text" placeholder="2 LETRAS"> <button onclick="conferir_cs()">Conferir</button>
+
+        <!-- Pergunta Adress Bus -->
+        13 - Usada para transferir dados entre dispositivos que são identificados pelo endereço de hardware da memória física, que é armazenado na forma de números binários para permitir que o barramento de dados acesse o armazenamento de memória
+        <input id="pergunta_adressbus" type="text" placeholder="6 LETRAS, 3 LETRAS"> <button onclick="conferir_adressbus()">Conferir</button>
+
+        <!-- Pergunta Data Bus -->
+        14 - É um sistema dentro de um computador ou dispositivo, consistindo em um conector ou conjunto de fios, que fornece transporte para dados.
+        <input id="pergunta_databus" type="text" placeholder="4 LETRAS, 3 LETRAS"> <button onclick="conferir_databus()">Conferir</button>
+
+        <!-- Pergunta I5 -->
+        15 - Core que não suporta hyper-threading.
+        <input id="pergunta_i5" type="text" placeholder="2 LETRAS"> <button onclick="conferir_i5()">Conferir</button>
+
+        <!-- Pergunta I7 -->
+        16 - Core que suporta hyper-threading e turbo boost.
+        <input id="pergunta_i7" type="text" placeholder="2 LETRAS"> <button onclick="conferir_i7()">Conferir</button>
+
+    </div>
 </body>
 </html>
+<script>
+
+    sempreamarelo.style.color = '#ffe135'
+
+    function conferir_cpu() {
+
+        if (pergunta_cpu.value.toUpperCase() == 'CPU') {
+
+            ccpu.style.color = '#ffe135'
+            pcpu.style.color = '#ffe135'
+            ucpu.style.color = '#ffe135'
+            
+        }
+
+        else {
+            alert ('Resposta errada!')
+
+            ccpu.style.color = '#007fff'
+            pcpu.style.color = '#007fff'
+            ucpu.style.color = '#007fff'
+        }
+    }
+
+    function conferir_ula() {
+
+        if (pergunta_ula.value.toUpperCase() == 'ULA') {
+            ucpu.style.color = '#ffe135'
+            lula.style.color = '#ffe135'
+            aula.style.color = '#ffe135'
+        }
+
+        else {
+            alert ('Resposta errada!')
+            ucpu.style.color = '#007fff'
+            lula.style.color = '#007fff'
+            aula.style.color = '#007fff'
+        }
+    }
+
+    function conferir_registradores() {
+
+        if (pergunta_registradores.value.toUpperCase() == 'REGISTRADORES') {
+            rregis.style.color = '#ffe135'
+            eregis.style.color = '#ffe135'
+            gregis.style.color = '#ffe135'
+            iregis.style.color = '#ffe135'
+            sregis.style.color = '#ffe135'
+            tregis.style.color = '#ffe135'
+            rrregis.style.color = '#ffe135'
+            aregis.style.color = '#ffe135'
+            dregis.style.color = '#ffe135'
+            oregis.style.color = '#ffe135'
+            rrrregis.style.color = '#ffe135'
+            eeregis.style.color = '#ffe135'
+            ssregis.style.color = '#ffe135'
+        }
+
+        else {
+            alert ('Resposta errada!')
+            rregis.style.color = '#007fff'
+            eregis.style.color = '#007fff'
+            gregis.style.color = '#007fff'
+            iregis.style.color = '#007fff'
+            sregis.style.color = '#007fff'
+            tregis.style.color = '#007fff'
+            rrregis.style.color = '#007fff'
+            aregis.style.color = '#007fff'
+            dregis.style.color = '#007fff'
+            oregis.style.color = '#007fff'
+            rrrregis.style.color = '#007fff'
+            eeregis.style.color = '#007fff'
+            ssregis.style.color = '#007fff'
+        }
+    }
+
+    function conferir_ram() {
+
+        if (pergunta_ram.value.toUpperCase() == 'RAM') {
+            rregis.style.color = '#ffe135'
+            aram.style.color = '#ffe135'
+            mram.style.color = '#ffe135'
+        }
+
+        else {
+            alert ('Resposta errada!') 
+            rregis.style.color = '#007fff'
+            aram.style.color = '#007fff'
+            mram.style.color = '#007fff'
+        }
+    }
+
+
+</script>
