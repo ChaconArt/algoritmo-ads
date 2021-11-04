@@ -1,0 +1,4 @@
+1 - prepara o banco para receber dados
+2 - instala e inicia npm
+3 - *api recebe dados de cadastro da pagina em HTML e inseri (model.js) no banco.
+4 - usuarioController.js faz a função de validação de login de acordo com dados inseridos no banco.
