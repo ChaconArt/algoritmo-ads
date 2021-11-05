@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chacon's Crossword</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images.jfif">
 </head>
 <body>
     <div class="box-left">
@@ -347,7 +348,7 @@
 
         <!-- Pergunta Memória de massa -->
         10 - Tem como função armazenar grandes quantidades de informações.
-        <input id="pergunta_memoriademassa" type="text" placeholder="7 LETRAS, 2 LETRAS, 5 DE MASSA"> <button onclick="conferir_memoriademassa()">Conferir</button>
+        <input id="pergunta_memoriademassa" type="text" placeholder="7 LETRAS, 2 LETRAS, 5 LETRAS"> <button onclick="conferir_memoriademassa()">Conferir</button>
 
         <!-- Pergunta DMA -->
         11 - Sigla do recurso da placa mãe que capacita os periféricos a terem acesso direto à memória RAM, sem sobrecarregarem o processador.
@@ -814,6 +815,24 @@
         udata.style.color = '#ffe135'
         icinco.style.color = '#ffe135'
         isete.style.color = '#ffe135'
+
+        pergunta_cpu.value = `CPU`
+        pergunta_ula.value = `ULA`
+        pergunta_registradores.value = `REGISTRADORES`
+        pergunta_ram.value = `RAM`
+        pergunta_rom.value = `ROM`
+        pergunta_eprom.value = `EPROM`
+        pergunta_dualcore.value = `DUAL CORE`
+        pergunta_quadcore.value = `QUAD CORE`
+        pergunta_memoriademassa.value = `MEMÓRIA DE MASSA`
+        pergunta_flash.value = `FLASH`
+        pergunta_dma.value = `DMA`
+        pergunta_databus.value = `DATA BUS`
+        pergunta_addressbus.value = `ADDRESS BUS`
+        pergunta_i5.value = `I5`
+        pergunta_i7.value = `I7`
+        pergunta_cs.value = `CS`
+        
     }
 
     function recomecar() {
@@ -892,6 +911,23 @@
         udata.style.color = '#007fff'
         icinco.style.color = '#007fff'
         isete.style.color = '#007fff'
+
+        pergunta_cpu.value = ``
+        pergunta_ula.value = ``
+        pergunta_registradores.value = ``
+        pergunta_ram.value = ``
+        pergunta_rom.value = ``
+        pergunta_eprom.value = ``
+        pergunta_dualcore.value = ``
+        pergunta_quadcore.value = ``
+        pergunta_memoriademassa.value = ``
+        pergunta_flash.value = ``
+        pergunta_dma.value = ``
+        pergunta_databus.value = ``
+        pergunta_addressbus.value = ``
+        pergunta_i5.value = ``
+        pergunta_i7.value = ``
+        pergunta_cs.value = ``
     }
 
 </script>
