@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h1>Sua turma</h1>
+    Cadastre seus alunos: <input type="text" id="ipt_aluno"> <button onclick="cadastrar()">Cadastrar aluno</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    var alunos = []
+
+    function cadastrar() {
+
+        msg.innerHTML = ``
+        alunos.push(ipt_aluno.value)
+
+        for (var operador = alunos.length-1 ; operador>=0; operador--) {
+            msg.innerHTML += `<br> ${alunos[operador]}` 
+        }
+
+        ipt_aluno.value = ``
+        
+    }
+
+
+
+</script>

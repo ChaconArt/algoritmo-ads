@@ -9,7 +9,12 @@
 <body>
     <h1>Your travel</h1>
     Destino de sua viagem: <input type="text" id="ipt_viagem">
-    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="adicionar()">Adicionar</button> <br><br>
+    <button onclick="primeira()">Primaira Viagem</button>
+    <button onclick="terceira()">Terceira Viagem</button>
+    <button onclick="ultima()">Última Viagem</button>
+    <div id="msg"></div>
+    
 </body>
 </html>
 <script>
@@ -18,8 +23,40 @@
 
     function adicionar() {
         viagem.push(ipt_viagem.value) 
+        ipt_viagem.value = ``
     }
 
+    function primeira() {
 
+        if (viagem.length >0 ) {
+            msg.innerHTML += `<br>${viagem[0]}`
+        }
+
+        else {
+            msg.innerHTML += `<br> ainda não viajou`
+        }
+    }
+
+    function terceira () {
+
+        if (viagem.length >2) {
+            msg.innerHTML += `<br>${viagem[2]}`
+        }
+
+        else {
+            msg.innerHTML += `<br> ainda não fez a 3ª viagem`
+        }
+    }
+
+    function ultima() {
+
+        if (viagem.length >3) {
+            msg.innerHTML += `<br>${viagem[3]}`
+        }
+
+        else {
+            msg.innerHTML += `<br> ainda não fez a última viagem`
+        }
+    }
 
 </script>

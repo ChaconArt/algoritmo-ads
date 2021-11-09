@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+
+    <h1>Yours districts</h1>
+    Bairros que você jámorou: <input type="text" id="ipt_bairro"> <button onclick="cadastrar()">Cadastrar bairro</button> <br> <br>
+    Número da bairro que deseja: <input type="text" id="ipt_buscar"> <button onclick="relembrar()">Relembrar moradia</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    var bairros = []
+
+    function cadastrar() {
+
+        bairros.push(ipt_bairro.value)
+        ipt_bairro.value = ``
+
+    }
+
+    function relembrar() {
+
+        if (ipt_buscar.value > bairros.length)  {
+            msg.innerHTML += `<br> Você não cadastrou um bairro na posição informada`
+        } 
+
+        else {
+        msg.innerHTML += `<br> ${bairros[ipt_buscar.value - 1]}`
+        ipt_buscar.value = ``
+        }
+
+    }
+
+</script>
