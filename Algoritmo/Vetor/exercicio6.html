@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <h1>Your favorites movies</h1>
+
+    Type yours favorites movies, start with your prefered <input id="ipt_movie" type="text"> <button onclick="register()">Register</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    var filmes = []
+
+    function register() {
+ 
+        filmes = []
+        filmes.push(ipt_movie.value)
+        
+        for (var operador = 0; operador < filmes.length; operador++) {
+            msg.innerHTML += `<br> ${ipt_movie.value}`
+        }
+
+        ipt_movie.value = ``
+
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+
+    <h2>Your favorite movie </h2>
+    Digite seu filme, começando pelo favorito: <input type="text" id="ipt_movie"> <button onclick="cadastrar()">Cadastrar filme</button> <br> <br>
+    <button onclick="verfav()">Ver favoritos</button>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+
+    var filmes = []
+    var total = 0
+
+    function cadastrar() {
+        filmes.push(ipt_movie.value)
+        ipt_movie.value = ``
+        total++
+    }
+
+    function verfav() {
+
+        msg.innerHTML = ``
+        msg.innerHTML += `<br> O que mais gosta é: ${filmes[0]}`
+        msg.innerHTML += `<br> O que menos gosta é: ${filmes[filmes.length - 1]}`
+        msg.innerHTML += `<br> O total de filmes cadastrados é ${total}`
+
+    }
+
+</script>
