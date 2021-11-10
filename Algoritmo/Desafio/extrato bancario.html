@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato bancário</title>
+</head>
+<body>
+
+    <div id="tela1" style="display: block;">
+    
+        <h2>Entre em sua conta</h2>
+        Nome do cliente: <input type="text" id="ipt_nome"> <b>obs:</b> Deve ter pelo menos 3 dígitos preenchidos <br>
+        Banco: <input type="number" id="ipt_banco"> <b>obs:</b> Tem que ser igual a 001, 102, 237 ou 341 <br>
+        Agência: <input type="number" id="ipt_agencia"> <b>obs:</b> Tem que ser maior que zero e menor que 999 <br> 
+        Conta: <input type="number" id="ipt_conta"> <b>obs:</b> Tem que ser maior que zero e menor que 99999 <br>
+        Digito:  <input type="text" id="ipt_digito"> <b>obs:</b> Tem que ser igual ao resto da divisão por 11 e depois por 10 <br>
+        Saldo inicial: <input type="text" id="ipt_saldo"> Sua escolha <br>
+        <button onclick="entrar()">Entrar</button>
+
+    </div>
+
+    <div id="tela2" style="display: none;">
+
+        <h2>Tela de extrato</h2>
+
+        <select id="operacao">
+            <option value="op_padrao">Selecione a operação</option>
+            <option value="op_debito">Débito</option>
+            <option value="op_credito">Crédito</option>
+        </select>
+
+        Data: <input type="date" id="op_data"> <br>
+        Valor: <input type="number" id="op_valor"> <br>
+        <button onclick="extrato()">Extrato</button> <button onclick="mudar()">Mudar a conta</button>
+        <div id="msg"></div>
+
+    </div>
+
+</body>
+</html>
+<script>
+
+    var digito = 0;
+    var digito2 = 0;
+    var ax_saldo = 0;
+    var ax_debito = 0;
+    var ax_credito = 0;
+    var ax_sobra = 0;
+
+    
+
+    function entrar() {
+
+        saldo = ipt_saldo.value
+        digito = ipt_conta.value % 11  
+        digito2 = digito % 10 
+
+        if (
+
+            ipt_nome.value.length >=3 && ipt_banco.value == 001 || ipt_banco.value == 102 || ipt_banco.value == 237 || ipt_banco.value == 341 && ipt_agencia.value >0 && ipt_agencia.value <999 && ipt_conta.value >0 && ipt_conta.value <99999 && ipt_digito.value == digito2 
+
+        ) {
+
+            tela1.style.display = 'none';
+            tela2.style.display = 'block';
+
+        }
+
+        else {
+
+            alert ('Conta inválida') 
+
+            ipt_nome.value = ``
+            ipt_banco.value = ``
+            ipt_agencia.value = ``
+            ipt_conta.value = ``
+            ipt_digito.value = ``
+            ipt_saldo.value = ``
+
+        }
+
+    }
+
+    function extrato() { 
+
+        if (operacao.value == 'op_debito') {
+
+            ax_debito = op_valor.value;
+            ax_sobra = saldo - ax_debito;
+
+            msg.innerHTML += `<br> ${op_data.value} - Saldo inicial R$ ${saldo} - Débito R$ ${ax_debito} - Saldo final R$ ${ax_sobra}`
+            
+            saldo = ax_sobra
+            ax_sobra = 0; 
+            ax_debito = 0;
+
+            operacao.value = 'op_padrao'
+            op_data.value = ``
+            op_valor.value = ``
+
+        } 
+
+        else if (operacao.value == 'op_credito') {
+
+            ax_credito = op_valor.value;
+            ax_sobra = saldo + Number(ax_credito);
+
+            msg.innerHTML += `<br> ${op_data.value} - Saldo inicial R$ ${saldo} - Crédito R$ ${ax_credito} - Saldo final R$ ${ax_sobra}`
+
+            saldo = ax_sobra
+            ax_sobra = 0;
+            ax_credito = 0;
+
+            operacao.value = 'op_padrao'
+            op_data.value = ``
+            op_valor.value = ``
+
+        }
+
+        else {
+            alert ('operação inválida')
+        }
+
+    }
+
+    function mudar() {
+
+        tela1.style.display = 'block';
+        tela2.style.display = 'none';
+
+        digito = 0;
+        digito2 = 0;
+        ax_saldo = 0;
+        ax_debito = 0;
+        ax_credito = 0;
+        ax_sobra = 0;
+
+        ipt_nome.value = ``
+        ipt_banco.value = ``
+        ipt_agencia.value = ``
+        ipt_conta.value = ``
+        ipt_digito.value = ``
+        ipt_saldo.value = ``
+
+        operacao.value = 'op_padrao'
+        op_data.value = ``
+        op_valor.value = `` 
+        
+        msg.innerHTML = ``
+    }
+
+
+</script>
