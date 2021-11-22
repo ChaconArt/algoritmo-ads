@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação continuada 3</title>
+</head>
+<body>
+
+    <h1>Controle de reembolso de despesas com locomoção</h1>
+    Entre com o valor do reembolso: 
+    <input id="ipt_vr" type="number">
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+    <h3>Total de reembolsos cadastrados = <span id="qtd_cadastro">0</span></h3><br>
+
+    <h2>Consulta dos reembolsos</h2>
+    <b>Entre com o intervalo de valores a ser pesquisado:</b> <br>
+    De: <input id="ipt_min" type="number">
+    Até: <input id="ipt_max" type="number">
+    <button onclick="resumir()">Resumir intervalo</button>
+    <div id="msgest"></div>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+
+    var vetor_valor = [];
+    var intervalomin = 0;
+    var intervalomax = 0;
+    var maiorvalor = 0;
+    var menorvalor = 1000;
+    var qtd_ocorrencias = 0;
+    var intervalosoma = 0;
+    var mediavalor = 0;
+
+    function cadastrar() {
+
+        if (Number(ipt_vr.value)<4 || Number(ipt_vr.value)>16) {
+            alert('O valor deve estar entre 4 e 16 reais')
+        }
+
+        else {
+            vetor_valor.push(Number(ipt_vr.value))
+            qtd_cadastro.innerHTML = vetor_valor.length
+        }
+
+        ipt_vr.value = ''
+    }
+
+    function resumir() {
+
+        intervalomin = Number(ipt_min.value);
+        intervalomax = Number(ipt_max.value);
+
+        if (intervalomin<4 || intervalomin>16 || intervalomin>intervalomax) {
+            alert ('O primeiro campo de consulta está errado.')
+        }
+
+        else if (intervalomax<4 || intervalomax>16) {
+            alert ('O segundo campo de consulta está errado')
+        }
+
+        else {
+            alert ('Pesquisa realizada!')
+            varrervetor()
+        }
+
+        ipt_min.value = '';
+        ipt_max.value = '';
+
+    }
+
+
+    function varrervetor() {
+
+        msg.innerHTML = ``
+
+        for (var i=vetor_valor.length; i>=0; i--) {
+
+            if (vetor_valor[i]>= intervalomin && vetor_valor[i]<=intervalomax) {
+
+                intervalosoma = vetor_valor[i] + intervalosoma
+                qtd_ocorrencias++
+
+                // encontrar maior valor
+                if (vetor_valor[i] > maiorvalor) {
+                maiorvalor = vetor_valor[i]
+                }
+
+                // encontrar menor valor
+                if (vetor_valor[i] < menorvalor) {
+                menorvalor = vetor_valor[i]
+                }
+
+                msg.innerHTML += `
+                Ocorrência ${i + Number(1)} - Valor R$ ${vetor_valor[i]} <br>
+                `
+            }
+
+            else {
+                msg.innerHTML += ``
+            }
+
+        }
+
+        mediavalor = intervalosoma / qtd_ocorrencias;
+
+        msgest.innerHTML = `<br> <b>
+        Maior valor ${maiorvalor} <br>
+        Menor valor ${menorvalor} <br>
+        Média dos intervalos: ${mediavalor} </b> <br><br>
+        `
+        
+        intervalomin = 0;
+        intervalomax = 0;
+        maiorvalor = 0;
+        menorvalor = 1000;
+        qtd_ocorrencias = 0;
+        intervalosoma = 0;
+        mediavalor = 0;
+
+    }
+
+</script>
