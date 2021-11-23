@@ -151,9 +151,9 @@
         valormed = Number(valoressomados) / Number(fiscaldeif)
 
         msgest.innerHTML = `<br>
-        O MAIOR valor encontrado no intervalo foi: ${valormax} <br>
-        O MENOR valor encontrado no intervalo foi: ${valormin} <br>
-        O MÉDIA encontrada no intervalo foi: ${valormed} <br>
+        O MAIOR valor encontrado no intervalo foi: ${valormax.toFixed(2)} <br>
+        O MENOR valor encontrado no intervalo foi: ${valormin.toFixed(2)} <br>
+        O MÉDIA encontrada no intervalo foi: ${valormed.toFixed(2)} <br>
         `
     }
 
@@ -172,12 +172,12 @@
                 if (vetor_valores[njr] == procurador) {
                     
                     msgbusca.innerHTML += `
-                    <br> O valor R$${vetor_valores[njr]} foi encontrado na ${njr + Number (1)}ª ocorrência
+                    <br> O valor R$${vetor_valores[njr].toFixed(2)} foi encontrado na ${njr + Number (1)}ª ocorrência
                     `
                 }
                 else {
                     msgbusca.innerHTML = `
-                    <br> O valor R$${vetor_valores[njr]} não foi encontrado
+                    <br> O valor R$${procurador.toFixed(2)} não foi encontrado
                     `
                 }
             } 
