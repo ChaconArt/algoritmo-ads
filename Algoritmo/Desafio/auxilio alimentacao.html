@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxílio alimentação</title>
+</head>
+<body>
+
+    <div id="telainicio" style="display: block;">
+        <h1>AllFat - Auxílio alimentação</h1>
+        Informe o valor do benefício: <input id="ipt_valor" type="number"> <br>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <button onclick="pesquisar()">Pesquisar</button>
+
+        <h2 id="titulohist" style="display: none;">Histórico dos valores</h2>
+        <div id="msg"></div>
+    </div>
+
+    
+
+    <div id="telapesquisa" style="display: none;">
+        <h1>AllFat - Auxílio alimentação</h1>
+        <b>Informe o intervalo de valores para a pesquisa</b> <br>
+        DE: <input id="ipt_min" type="number">
+        ATÉ: <input id="ipt_max" type="number">
+        <button onclick="resumirintervalo()">Resumir intervalo</button>
+        <br><br>
+        <b>Informe o valor para ser pesquisado</b>
+        <br>
+        VALOR: <input id="ipt_pesquisa" type="number">
+        <button onclick="buscarvalor()">Procurar valor</button>
+        <h3 id="titulointervalo" style="display: none;">Resumo dos benefícios desse intervalo</h3>
+        <div id="msgest"></div>
+        <div id="msgbusca"></div>
+    </div>
+
+    
+
+
+</body>
+</html>
+<script>
+
+    var vetor_valores = [];
+    var validar = 0;
+    var intervalormin = 0;
+    var intervalormax = 0;
+    var valormax = 0;
+    var valormin = 36;
+    var valormed = 0;
+    var fiscaldeif = 0;
+    var valoressomados = 0;
+    var procurador = 0;
+
+    function cadastrar() {
+
+        validar = Number (ipt_valor.value)
+
+        if (validar<3 || validar>35) {
+            alert ('Somente valores de 3 até 35 reais!')
+            titulohist.style.display = 'none'
+            msg.innerHTML = ''
+        }
+
+        else {
+            vetor_valores.push(validar)
+            listarbeneficios()
+            titulohist.style.display = 'block'
+        }
+
+        ipt_valor.value = '';
+        validar = 0;
+        
+    }
+
+    function listarbeneficios() {
+
+        msg.innerHTML = ''
+
+        for (var i=vetor_valores.length -1; i>=0; i--) {
+
+            msg.innerHTML += `<br> A ${i + Number(1)}ª ocorrência é: ${vetor_valores[i]}   `
+
+        }
+
+    }
+
+    function pesquisar() {
+
+        if (vetor_valores.length<1) {
+            alert ('Você precisa cadastrar algum valor primeiro!')
+        }
+
+        else {
+            telainicio.style.display = 'none'
+            telapesquisa.style.display = 'block'
+        }
+
+    }
+
+    function resumirintervalo() {
+
+        intervalormin = Number (ipt_min.value);
+        intervalormax = Number (ipt_max.value);
+
+        if (intervalormin<3 || intervalormin>35 || intervalormin>intervalormax) {
+            alert('O primeiro campo está errado')
+        }
+
+        else if (intervalormax<3 || intervalormax>35) {
+            alert ('O segundo campo está errado')
+        }
+
+        else {
+            titulointervalo.style.display = 'block'
+            estatisticas()
+        }
+
+        fiscaldeif = 0;
+        valormin = 36;
+        valormax = 0;
+        valormed = 0;
+        valoressomados = 0;
+
+    }
+
+    function estatisticas() {
+
+        msgest.innerHTML = ''
+        
+        for (var c=0; c<=vetor_valores.length; c++) {
+
+            if (vetor_valores[c]>=intervalormin && vetor_valores[c]<=intervalormax) {
+
+                valoressomados = Number (valoressomados) + Number(vetor_valores[c])
+                fiscaldeif++
+
+                if (vetor_valores[c]>valormax) {
+                    valormax = vetor_valores[c]
+                }
+                if (vetor_valores[c]<valormin) {
+                    valormin = vetor_valores[c]
+                }
+
+            }
+
+        }
+
+        valormed = Number(valoressomados) / Number(fiscaldeif)
+
+        msgest.innerHTML = `<br>
+        O MAIOR valor encontrado no intervalo foi: ${valormax} <br>
+        O MENOR valor encontrado no intervalo foi: ${valormin} <br>
+        O MÉDIA encontrada no intervalo foi: ${valormed} <br>
+        `
+    }
+
+    function buscarvalor() {
+
+        msgbusca.innerHTML =''
+
+        procurador = Number (ipt_pesquisa.value)
+
+        if (procurador<3 || procurador>35) {
+            alert ('Valor a ser procurado inválido')
+        }
+
+        else {
+            for (var njr = 0; njr<vetor_valores.length; njr++) {
+                if (vetor_valores[njr] == procurador) {
+                    
+                    msgbusca.innerHTML += `
+                    <br> O valor R$${vetor_valores[njr]} foi encontrado na ${njr + Number (1)}ª ocorrência
+                    `
+                }
+                else {
+                    msgbusca.innerHTML = `
+                    <br> O valor R$${vetor_valores[njr]} não foi encontrado
+                    `
+                }
+            } 
+        }
+
+    }
+
+
+</script>
