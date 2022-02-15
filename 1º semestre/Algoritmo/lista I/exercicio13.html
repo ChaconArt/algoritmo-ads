@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 13</title>
 </head>
+
 <body>
-   
+
     <h2>Campanha do time</h2>
 
     <select id="resultado">
@@ -15,17 +17,18 @@
         <option value="vitoria">Vitória</option>
         <option value="empate">Empate</option>
         <option value="derrota">Derrota</option>
-    </select> 
+    </select>
 
     <button onclick="registrar()">Registrar jogo</button> <br>
-    
+
     <input id="pesquisa" type="number" placeholder="Indique qual jogo quer saber o resultado">
     <button onclick="buscar()">Buscar</button>
-    
+
     <div id="msg"></div>
     <div id="msg2"></div>
 
 </body>
+
 </html>
 <script>
 
@@ -36,12 +39,12 @@
     var pontuacao = 0;
     var pontos_disputados = 0;
     var aproveitamento = 0;
-    
+
     function registrar() {
 
         if (resultado.value == 'padrao') {
-            alert ('Selecione qual foi o resultado da partida!')
-        }       
+            alert('Selecione qual foi o resultado da partida!')
+        }
 
         else {
             desempenho.push(resultado.value)
@@ -56,10 +59,10 @@
 
         esvaziar()
 
-        for (contador = 0; contador<desempenho.length; contador ++) {
+        for (contador = 0; contador < desempenho.length; contador++) {
 
             if (desempenho[contador] == 'vitoria') {
-                vitoria ++
+                vitoria++
 
                 pontuacao++
                 pontuacao++
@@ -77,7 +80,7 @@
 
         }
 
-        
+
         pontos_disputados = desempenho.length * 3;
         aproveitamento = (pontuacao / pontos_disputados) * 100;
 
@@ -101,12 +104,12 @@
     function buscar() {
 
         if (pesquisa.value > desempenho.length) {
-            alert ('Não foi cadastrado um '+ pesquisa.value + 'º jogo')
+            alert('Não foi cadastrado um ' + pesquisa.value + 'º jogo')
             pesquisa.value = ''
         }
 
         else if (pesquisa.value < 0) {
-            alert ('Não foi cadastrado um '+ pesquisa.value + 'º jogo' )
+            alert('Não foi cadastrado um ' + pesquisa.value + 'º jogo')
             pesquisa.value = ''
         }
 
@@ -120,16 +123,16 @@
 
             else if (desempenho[pesquisa.value - 1] == 'empate') {
                 oqueaconteceu = 'empatou'
-            } 
+            }
 
             else {
                 oqueaconteceu = 'perdeu'
             }
-            
+
             msg2.innerHTML = `
             No ${pesquisa.value}º jogo, o time ${oqueaconteceu}
             `
-            
+
             pesquisa.value = ''
 
         }
