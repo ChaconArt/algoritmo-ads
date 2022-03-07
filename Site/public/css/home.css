@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Estilização da header */
+
+.header {
+    display: flex;
+    height: 120px;
+    width: 100%;
+    background-color: black;
+}
+
+.header .left {
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+
+.header .right {
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+
+.left .name {
+    display: flex;
+    margin-left: 10%;
+    align-items: center;
+    color: #03a062;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.right button {
+    display: flex;
+    margin-right: 10%;
+    height: 40%;
+    width: 25%;
+    background-color: #03a062;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+button:hover {
+    transform: scale(1.2);
+    background-color: #fff;
+    color: #03a062;
+}
+
+/* Estilização banner */
+
+.banner {
+    display: flex;
+    height: 650px;
+    width: 100%;
+    background-color: #03a062;
+    justify-content: center;
+}
+
+.banner .bannerimage {
+    display: flex;
+    height: 85%;
+    width: 85%;
+    align-self: center;
+    background-image: url(/assets/hardware.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.bannerimage {
+    display: flex;
+    align-items: center;
+}
+
+.bannerimage .bannertext {
+    display: flex;
+    margin-left: 10%;
+    height: 80%;
+    width: 40%;
+    background-color: black;
+    opacity: 0.9;
+}
+

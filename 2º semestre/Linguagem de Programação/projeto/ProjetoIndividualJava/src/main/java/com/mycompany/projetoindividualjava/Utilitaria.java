@@ -6,6 +6,7 @@ package com.mycompany.projetoindividualjava;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -47,13 +48,15 @@ public class Utilitaria {
         
         
         System.out.println(String.format
-        ("Time: %s \n"
+        ("---".repeat(20)
+        + "\nTime: %s \n"
         + "Pontos: %.0f \n"
         + "Jogos: %.0f \n"
         + "Vitórias: %.0f \n"
         + "Empates: %.0f \n"
         + "Derrotas: %.0f \n"
         + "Aproveitamento: %.2f \n"
+        + "---".repeat(20)
         , nomeTime, pontos, jogos, vitoria, empate, derrota, aproveitamento));
     } 
     
@@ -211,7 +214,6 @@ public class Utilitaria {
         Integer sairContinuar = 2;
         
         while (sairContinuar>1) {
-            
             System.out.println("---".repeat(20)
                     + "\nVocê seria:");
             
@@ -247,9 +249,67 @@ public class Utilitaria {
                 default:
                     System.out.println("Escolha uma opção válida");
             }
+        }
+    }
+    
+    void testeSorte() {
+
+        Scanner leitor = new Scanner(System.in);
+        
+        Boolean controlador = true;
+        Boolean controlador2 = true;
+        Integer escolhaUsuario = null;
+        Integer numeroGerado = null;
+        Integer ultimaPontuacao = 0;
+        Integer pontuacaoAtual = 0;
+        
+        while (controlador) {
             
+            System.out.println(String.format
+            ("---".repeat(20)
+            + "\n50 de chanche de ganhar e 50 de perder\n"
+            + "---".repeat(20)
+            + "\nÚltima pontuação: %d\n"
+            + "Pontuação atual: %d\n"
+            + "\nEscolha uma opção:\n"
+            + "1ª opcão\n"
+            + "2ª opcão", ultimaPontuacao, pontuacaoAtual));
             
+            escolhaUsuario = leitor.nextInt();
+            numeroGerado = ThreadLocalRandom.current().nextInt(1, 3);
             
+            if (escolhaUsuario==numeroGerado) {
+                pontuacaoAtual++;
+                System.out.println("Deu bom!");
+            } else {
+                ultimaPontuacao = pontuacaoAtual;
+                pontuacaoAtual = 0;
+                
+                System.out.println("Deu ruim amigo!\n"
+                + "---".repeat(20)
+                + "\nQuer jogar de novo?\n"
+                + "1. Sim\n"
+                + "2. Não");
+                
+                escolhaUsuario = leitor.nextInt();
+                
+                while (controlador2) {
+                    switch (escolhaUsuario) {
+                    case 1:
+                        controlador2 = false;
+                        break;
+                    case 2:
+                        System.out.println("Até a próxima!");
+                        controlador = false;
+                        controlador2 = false;
+                        break;
+                    default:
+                        System.out.println("Escolha uma opção válida\n"
+                        + "---".repeat(20));
+                    }                    
+                }
+                controlador2 = true;
+            }
         }
         
     }

@@ -30,6 +30,7 @@ public class SoccerAnalysis {
         System.out.println("(2) Quiz futebol.");
         System.out.println("(3) Qual jogador você seria?");
         System.out.println("(4) Sair.");
+        System.out.println("(5) Teste sua sorte.");
         
             varOpcao = leitorOpcao.nextInt();
             
@@ -47,9 +48,13 @@ public class SoccerAnalysis {
                     System.out.println("Programa encerrado!");
                     controle = false;
                     break;
+                case 5:
+                    util.testeSorte();
+                    break;
                 default:
                     System.out.println
-                    ("Opção inválida, escolha uma opção de 1 a 4!");
+                    ("Opção inválida, escolha uma opção de 1 a 4!"
+                    + "---".repeat(20));
             }
         }
     }
