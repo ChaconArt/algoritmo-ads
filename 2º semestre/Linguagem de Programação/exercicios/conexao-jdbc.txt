@@ -1,0 +1,6 @@
+acessa projeto > baixar dependencia do jdbc, h2, e commons 
+
+cria classe connection > cria construtor > seta credenciais do banco > get atributo private
+
+cria app > instancia a classe connection > instancia JDBCTemlate e passa o connection.getDataSource() como argumento
+
